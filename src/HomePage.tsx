@@ -300,22 +300,6 @@ function ServicesSection() {
   )
 }
 
-function PricingSection() {
-  return (
-    <section id="pricing" className="bg-stone-50 py-16 sm:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-center font-serif text-3xl text-teal-700 sm:text-4xl">
-          Cennik
-        </h2>
-        <p className="mx-auto mt-6 max-w-2xl text-center leading-relaxed text-stone-600">
-          Szczegolowy cennik wizyt i konsultacji jest dostepny podczas kontaktu
-          telefonicznego oraz w gabinecie.
-        </p>
-      </div>
-    </section>
-  )
-}
-
 function HealthZoneSection() {
   return (
     <section id="health-zone" className="bg-white py-16 sm:py-20">
@@ -332,10 +316,30 @@ function HealthZoneSection() {
   )
 }
 
+function FloatingBookingButton() {
+  return (
+    <div className="fixed inset-x-4 bottom-4 z-[60] sm:inset-x-auto sm:right-5">
+      <a
+        href={BOOKING_URL}
+        target="_blank"
+        rel="noreferrer"
+        className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-green-600 px-6 py-3 text-base font-bold text-white shadow-[0_12px_30px_-12px_rgba(22,163,74,0.9)] ring-2 ring-green-300 transition hover:bg-green-700 hover:ring-green-400 sm:w-auto"
+        aria-label="Umow wizyte przez ZnanyLekarz (otworzy sie w nowej karcie)"
+      >
+        <CalendarCheck2 className="h-5 w-5" aria-hidden="true" />
+        Umow wizyte
+        <ExternalLink className="h-4 w-4" aria-hidden="true" />
+      </a>
+    </div>
+  )
+}
+
 export function Footer() {
   return (
-    <footer id="contact" className="border-t border-stone-200 bg-stone-50">
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+    <>
+      <FloatingBookingButton />
+      <footer id="contact" className="border-t border-stone-200 bg-stone-50 pb-24 sm:pb-14">
+        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="overflow-hidden rounded-xl border border-stone-200 bg-gray-200 shadow-sm">
           <iframe
             src={GOOGLE_MAPS_EMBED_URL}
@@ -375,7 +379,7 @@ export function Footer() {
             href={BOOKING_URL}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg bg-green-600 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-green-700 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-700"
+            className="inline-flex items-center gap-2 rounded-xl bg-green-600 px-7 py-3 text-base font-bold text-white shadow-[0_12px_30px_-12px_rgba(22,163,74,0.9)] ring-2 ring-green-300 transition hover:bg-green-700 hover:ring-green-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-700"
             aria-label="Umow wizyte przez ZnanyLekarz (otworzy sie w nowej karcie)"
           >
             <CalendarCheck2 className="h-5 w-5" aria-hidden="true" />
@@ -388,8 +392,9 @@ export function Footer() {
           © {new Date().getFullYear()} Michal Kasprzyca. Wszelkie prawa
           zastrzezone.
         </p>
-      </div>
-    </footer>
+        </div>
+      </footer>
+    </>
   )
 }
 
@@ -400,7 +405,6 @@ export default function HomePage() {
       <main>
         <Hero />
         <ServicesSection />
-        <PricingSection />
         <HealthZoneSection />
       </main>
       <Footer />
