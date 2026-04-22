@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import {
   ArrowRight,
+  CalendarCheck2,
+  ExternalLink,
   Feather,
   MapPin,
   Menu,
@@ -27,9 +29,9 @@ const navItems: NavItem[] = [
   { label: 'Strona glowna', href: '/', kind: 'route' },
   { label: 'O mnie', href: '/o-mnie', kind: 'route' },
   { label: 'Uslugi', href: '/uslugi', kind: 'route' },
-  { label: 'Cennik', href: '/#pricing', kind: 'hash' },
-  { label: 'Strefa zdrowia', href: '/#health-zone', kind: 'hash' },
-  { label: 'Kontakt', href: '/#contact', kind: 'hash' },
+  { label: 'Cennik', href: '/cennik', kind: 'route' },
+  { label: 'Strefa zdrowia', href: '/strefa-zdrowia', kind: 'route' },
+  { label: 'Kontakt', href: '/kontakt', kind: 'route' },
 ]
 
 const services: Service[] = [
@@ -48,6 +50,8 @@ const services: Service[] = [
 ]
 
 const GOOGLE_MAPS_LOCATION_URL = 'https://maps.app.goo.gl/sCujAYXbccwRYajg9'
+const BOOKING_URL =
+  'https://www.znanylekarz.pl/michal-kasprzyca/psycholog-psychoterapeuta/wroclaw?utm_source=widget-doctor-307228&utm_medium=small&utm_campaign=&utm_content=www-gabinet-psychoterapeutyczny-org.filesusr.com#highlight-calendar'
 
 function isNavItemActive(
   item: NavItem,
@@ -192,6 +196,8 @@ export function Header() {
 }
 
 function Hero() {
+  const [isProfileImageMissing, setIsProfileImageMissing] = useState(false)
+
   return (
     <section className="bg-stone-50">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-3 lg:items-center lg:gap-12 lg:px-8 lg:py-20">
@@ -208,9 +214,20 @@ function Hero() {
           </p>
         </div>
 
-        <div className="mx-auto flex h-64 w-64 items-center justify-center rounded-2xl border-2 border-teal-200 bg-white shadow-md sm:h-72 sm:w-72">
-          <UserRound className="h-16 w-16 text-stone-400" aria-hidden="true" />
-          <span className="sr-only">Zdjecie profilowe psychoterapeuty</span>
+        <div className="mx-auto flex h-64 w-64 items-center justify-center overflow-hidden rounded-2xl border-2 border-teal-200 bg-white shadow-md sm:h-72 sm:w-72">
+          {isProfileImageMissing ? (
+            <>
+              <UserRound className="h-16 w-16 text-stone-400" aria-hidden="true" />
+              <span className="sr-only">Zdjecie profilowe psychoterapeuty</span>
+            </>
+          ) : (
+            <img
+              src="/img/1.jpg"
+              alt="Michal Kasprzyca"
+              className="h-full w-full object-cover"
+              onError={() => setIsProfileImageMissing(true)}
+            />
+          )}
         </div>
       </div>
     </section>
@@ -332,10 +349,15 @@ export function Footer() {
 
         <div className="mt-6 flex justify-center">
           <a
-            href="#"
-            className="inline-flex items-center rounded-lg bg-green-600 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-700"
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg bg-green-600 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-green-700 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-700"
+            aria-label="Umow wizyte przez ZnanyLekarz (otworzy sie w nowej karcie)"
           >
+            <CalendarCheck2 className="h-5 w-5" aria-hidden="true" />
             Umow wizyte - ZnanyLekarz
+            <ExternalLink className="h-4 w-4" aria-hidden="true" />
           </a>
         </div>
 

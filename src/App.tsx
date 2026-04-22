@@ -1,7 +1,10 @@
 import { useEffect } from 'react'
 import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import AboutPage from './AboutPage'
+import ContactPage from './ContactPage'
+import HealthZonePage from './HealthZonePage'
 import HomePage from './HomePage'
+import PricingPage from './PricingPage'
 import ServicesPage from './ServicesPage'
 
 function ScrollToHash() {
@@ -31,6 +34,9 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/o-mnie" element={<AboutPage />} />
         <Route path="/uslugi" element={<ServicesPage />} />
+        <Route path="/cennik" element={<PricingPage />} />
+        <Route path="/strefa-zdrowia" element={<HealthZonePage />} />
+        <Route path="/kontakt" element={<ContactPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
