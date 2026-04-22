@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   ArrowRight,
   Feather,
@@ -7,11 +7,12 @@ import {
   UserRound,
   X,
 } from 'lucide-react'
+import { Link, useLocation } from 'react-router-dom'
 
 interface NavItem {
   label: string
   href: string
-  active?: boolean
+  kind: 'route' | 'hash'
 }
 
 interface Service {
@@ -23,12 +24,12 @@ interface Service {
 interface ServiceCardProps extends Service {}
 
 const navItems: NavItem[] = [
-  { label: 'Strona glowna', href: '#', active: true },
-  { label: 'O mnie', href: '#' },
-  { label: 'Uslugi', href: '#services' },
-  { label: 'Cennik', href: '#' },
-  { label: 'Strefa zdrowia', href: '#' },
-  { label: 'Kontakt', href: '#contact' },
+  { label: 'Strona glowna', href: '/', kind: 'route' },
+  { label: 'O mnie', href: '/o-mnie', kind: 'route' },
+  { label: 'Uslugi', href: '/uslugi', kind: 'route' },
+  { label: 'Cennik', href: '/#pricing', kind: 'hash' },
+  { label: 'Strefa zdrowia', href: '/#health-zone', kind: 'hash' },
+  { label: 'Kontakt', href: '/#contact', kind: 'hash' },
 ]
 
 const services: Service[] = [
@@ -46,8 +47,29 @@ const services: Service[] = [
   },
 ]
 
-function Header() {
+const GOOGLE_MAPS_LOCATION_URL = 'https://maps.app.goo.gl/sCujAYXbccwRYajg9'
+
+function isNavItemActive(
+  item: NavItem,
+  pathname: string,
+  hash: string,
+): boolean {
+  if (item.kind === 'route') {
+    return pathname === item.href
+  }
+
+  const [itemPath, itemHash] = item.href.split('#')
+  const normalizedPath = itemPath || '/'
+  return pathname === normalizedPath && hash === `#${itemHash}`
+}
+
+export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const location = useLocation()
+
+  useEffect(() => {
+    setIsMobileMenuOpen(false)
+  }, [location.pathname, location.hash])
 
   return (
     <header className="sticky top-0 z-50 border-b border-stone-100 bg-white/95 backdrop-blur">
@@ -100,21 +122,28 @@ function Header() {
 
         <nav aria-label="Nawigacja glowna" className="hidden pb-4 md:block">
           <ul className="flex flex-wrap items-center gap-2">
-            {navItems.map((item) => (
-              <li key={item.label}>
-                <a
-                  href={item.href}
-                  className={`inline-flex rounded-md px-4 py-2 text-sm font-medium transition ${
-                    item.active
-                      ? 'bg-orange-500 text-white shadow-sm'
-                      : 'text-stone-700 hover:bg-stone-100'
-                  }`}
-                  aria-current={item.active ? 'page' : undefined}
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
+            {navItems.map((item) => {
+              const isActive = isNavItemActive(
+                item,
+                location.pathname,
+                location.hash,
+              )
+              return (
+                <li key={item.label}>
+                  <Link
+                    to={item.href}
+                    className={`inline-flex rounded-md px-4 py-2 text-sm font-medium transition ${
+                      isActive
+                        ? 'bg-orange-500 text-white shadow-sm'
+                        : 'text-stone-700 hover:bg-stone-100'
+                    }`}
+                    aria-current={isActive ? 'page' : undefined}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              )
+            })}
           </ul>
         </nav>
 
@@ -132,21 +161,28 @@ function Header() {
           </div>
           <nav aria-label="Nawigacja mobilna">
             <ul className="space-y-1">
-              {navItems.map((item) => (
-                <li key={`mobile-${item.label}`}>
-                  <a
-                    href={item.href}
-                    className={`block rounded-md px-3 py-2 text-sm font-medium ${
-                      item.active
-                        ? 'bg-orange-500 text-white'
-                        : 'text-stone-700 hover:bg-stone-100'
-                    }`}
-                    aria-current={item.active ? 'page' : undefined}
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
+              {navItems.map((item) => {
+                const isActive = isNavItemActive(
+                  item,
+                  location.pathname,
+                  location.hash,
+                )
+                return (
+                  <li key={`mobile-${item.label}`}>
+                    <Link
+                      to={item.href}
+                      className={`block rounded-md px-3 py-2 text-sm font-medium ${
+                        isActive
+                          ? 'bg-orange-500 text-white'
+                          : 'text-stone-700 hover:bg-stone-100'
+                      }`}
+                      aria-current={isActive ? 'page' : undefined}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                )
+              })}
             </ul>
           </nav>
         </div>
@@ -216,18 +252,85 @@ function ServicesSection() {
   )
 }
 
-function Footer() {
+function PricingSection() {
+  return (
+    <section id="pricing" className="bg-stone-50 py-16 sm:py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h2 className="text-center font-serif text-3xl text-teal-700 sm:text-4xl">
+          Cennik
+        </h2>
+        <p className="mx-auto mt-6 max-w-2xl text-center leading-relaxed text-stone-600">
+          Szczegolowy cennik wizyt i konsultacji jest dostepny podczas kontaktu
+          telefonicznego oraz w gabinecie.
+        </p>
+      </div>
+    </section>
+  )
+}
+
+function HealthZoneSection() {
+  return (
+    <section id="health-zone" className="bg-white py-16 sm:py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h2 className="text-center font-serif text-3xl text-teal-700 sm:text-4xl">
+          Strefa zdrowia
+        </h2>
+        <p className="mx-auto mt-6 max-w-2xl text-center leading-relaxed text-stone-600">
+          Wkrotce znajdziesz tutaj materialy psychoedukacyjne i wskazowki
+          wspierajace codzienny dobrostan psychiczny.
+        </p>
+      </div>
+    </section>
+  )
+}
+
+export function Footer() {
   return (
     <footer id="contact" className="border-t border-stone-200 bg-stone-50">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="flex h-64 items-center justify-center rounded-xl bg-gray-200 px-6 text-center text-stone-600">
-          <div className="flex items-center gap-2">
-            <MapPin className="h-5 w-5 text-teal-700" aria-hidden="true" />
-            <p>Mapa Google - Zygmunta Krasinskiego 1, Wroclaw</p>
+        <a
+          href={GOOGLE_MAPS_LOCATION_URL}
+          target="_blank"
+          rel="noreferrer"
+          className="flex h-64 items-center justify-center rounded-xl bg-gray-200 px-6 text-center text-stone-600 transition hover:bg-gray-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
+          aria-label="Otworz lokalizacje gabinetu w Google Maps"
+        >
+          <div className="flex flex-col items-center gap-3">
+            <div className="flex items-center gap-2">
+              <MapPin className="h-5 w-5 text-teal-700" aria-hidden="true" />
+              <p>Mapa Google - Zygmunta Krasinskiego 1, Wroclaw</p>
+            </div>
+            <span className="inline-flex rounded-md bg-white px-4 py-2 text-sm font-semibold text-teal-700 shadow-sm">
+              Otworz lokalizacje
+            </span>
           </div>
+        </a>
+
+        <div className="mt-4 flex items-center justify-center gap-2 text-sm text-stone-600">
+          <MapPin className="h-4 w-4 text-orange-500" aria-hidden="true" />
+          <a
+            href={GOOGLE_MAPS_LOCATION_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="font-medium text-teal-700 underline-offset-2 transition hover:text-orange-500 hover:underline"
+          >
+            Zobacz lokalizacje gabinetu w Google Maps
+          </a>
         </div>
 
         <div className="mt-8 flex justify-center">
+          <a
+            href={GOOGLE_MAPS_LOCATION_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg border border-orange-200 bg-white px-5 py-2 text-sm font-semibold text-teal-700 transition hover:border-orange-300 hover:text-orange-500"
+          >
+            <MapPin className="h-5 w-5 text-teal-700" aria-hidden="true" />
+            Nawiguj do gabinetu
+          </a>
+        </div>
+
+        <div className="mt-6 flex justify-center">
           <a
             href="#"
             className="inline-flex items-center rounded-lg bg-green-600 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-700"
@@ -252,6 +355,8 @@ export default function HomePage() {
       <main>
         <Hero />
         <ServicesSection />
+        <PricingSection />
+        <HealthZoneSection />
       </main>
       <Footer />
     </div>
