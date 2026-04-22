@@ -5,6 +5,8 @@ import { Footer, Header } from './HomePage'
 const BOOKING_URL =
   'https://www.znanylekarz.pl/michal-kasprzyca/psycholog-psychoterapeuta/wroclaw?utm_source=widget-doctor-307228&utm_medium=small&utm_campaign=&utm_content=www-gabinet-psychoterapeutyczny-org.filesusr.com#highlight-calendar'
 const GOOGLE_MAPS_URL = 'https://maps.app.goo.gl/sCujAYXbccwRYajg9'
+const GOOGLE_MAPS_EMBED_URL =
+  'https://www.google.com/maps?q=Zygmunta+Krasinskiego+1,+Wroclaw&output=embed'
 
 export default function ContactPage() {
   const [isProfileImageMissing, setIsProfileImageMissing] = useState(false)
@@ -84,15 +86,25 @@ export default function ContactPage() {
 
         <section className="bg-white py-10 sm:py-12">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <a
-              href={GOOGLE_MAPS_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="flex h-[400px] items-center justify-center rounded-2xl bg-gray-200 px-6 text-center text-lg text-stone-600 shadow-sm transition hover:bg-gray-300"
-              aria-label="Mapa Google - Zygmunta Krasinskiego 1, Wroclaw"
-            >
-              Mapa Google - Zygmunta Krasinskiego 1, Wroclaw
-            </a>
+            <div className="overflow-hidden rounded-2xl border border-stone-200 bg-gray-200 shadow-sm">
+              <iframe
+                src={GOOGLE_MAPS_EMBED_URL}
+                title="Mapa Google - Zygmunta Krasinskiego 1, Wroclaw"
+                className="h-[400px] w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+            <div className="mt-3 text-center">
+              <a
+                href={GOOGLE_MAPS_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm font-medium text-teal-700 underline-offset-2 transition hover:text-orange-500 hover:underline"
+              >
+                Otworz lokalizacje w Google Maps
+              </a>
+            </div>
           </div>
         </section>
 
@@ -136,7 +148,7 @@ export default function ContactPage() {
                       <img
                         src="/img/1.jpg"
                         alt="Michal Kasprzyca"
-                        className="h-full w-full object-cover"
+                        className="h-full w-full scale-110 object-cover object-[38%_25%]"
                         onError={() => setIsProfileImageMissing(true)}
                       />
                     )}

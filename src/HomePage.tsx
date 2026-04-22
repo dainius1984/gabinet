@@ -50,6 +50,8 @@ const services: Service[] = [
 ]
 
 const GOOGLE_MAPS_LOCATION_URL = 'https://maps.app.goo.gl/sCujAYXbccwRYajg9'
+const GOOGLE_MAPS_EMBED_URL =
+  'https://www.google.com/maps?q=Zygmunta+Krasinskiego+1,+Wroclaw&output=embed'
 const BOOKING_URL =
   'https://www.znanylekarz.pl/michal-kasprzyca/psycholog-psychoterapeuta/wroclaw?utm_source=widget-doctor-307228&utm_medium=small&utm_campaign=&utm_content=www-gabinet-psychoterapeutyczny-org.filesusr.com#highlight-calendar'
 
@@ -224,7 +226,7 @@ function Hero() {
             <img
               src="/img/1.jpg"
               alt="Michal Kasprzyca"
-              className="h-full w-full object-cover"
+              className="h-full w-full scale-110 object-cover object-[38%_25%]"
               onError={() => setIsProfileImageMissing(true)}
             />
           )}
@@ -305,23 +307,15 @@ export function Footer() {
   return (
     <footer id="contact" className="border-t border-stone-200 bg-stone-50">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-        <a
-          href={GOOGLE_MAPS_LOCATION_URL}
-          target="_blank"
-          rel="noreferrer"
-          className="flex h-64 items-center justify-center rounded-xl bg-gray-200 px-6 text-center text-stone-600 transition hover:bg-gray-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
-          aria-label="Otworz lokalizacje gabinetu w Google Maps"
-        >
-          <div className="flex flex-col items-center gap-3">
-            <div className="flex items-center gap-2">
-              <MapPin className="h-5 w-5 text-teal-700" aria-hidden="true" />
-              <p>Mapa Google - Zygmunta Krasinskiego 1, Wroclaw</p>
-            </div>
-            <span className="inline-flex rounded-md bg-white px-4 py-2 text-sm font-semibold text-teal-700 shadow-sm">
-              Otworz lokalizacje
-            </span>
-          </div>
-        </a>
+        <div className="overflow-hidden rounded-xl border border-stone-200 bg-gray-200 shadow-sm">
+          <iframe
+            src={GOOGLE_MAPS_EMBED_URL}
+            title="Mapa Google - Zygmunta Krasinskiego 1, Wroclaw"
+            className="h-64 w-full border-0"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
 
         <div className="mt-4 flex items-center justify-center gap-2 text-sm text-stone-600">
           <MapPin className="h-4 w-4 text-orange-500" aria-hidden="true" />
