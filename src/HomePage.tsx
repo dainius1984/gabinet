@@ -199,12 +199,41 @@ export function Header() {
 
 function Hero() {
   const [isProfileImageMissing, setIsProfileImageMissing] = useState(false)
+  const leftImageCandidates = [
+    '/img/2.img',
+    '/img/2.jpg',
+    '/img/2.jpeg',
+    '/img/2.png',
+    '/img/2.webp',
+  ]
+  const [leftImageIndex, setLeftImageIndex] = useState(0)
+  const [isLeftImageMissing, setIsLeftImageMissing] = useState(false)
+
+  const handleLeftImageError = () => {
+    if (leftImageIndex < leftImageCandidates.length - 1) {
+      setLeftImageIndex((prev) => prev + 1)
+      return
+    }
+    setIsLeftImageMissing(true)
+  }
 
   return (
     <section className="bg-stone-50">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-3 lg:items-center lg:gap-12 lg:px-8 lg:py-20">
-        <div className="hidden min-h-[260px] rounded-2xl border border-dashed border-stone-300 bg-white/40 lg:block">
-          {/* Miejsce na SVG drzewa */}
+        <div className="hidden min-h-[260px] overflow-hidden rounded-2xl border border-teal-200 bg-white shadow-sm lg:block">
+          {isLeftImageMissing ? (
+            <div className="flex h-full items-center justify-center p-6 text-center text-sm text-stone-500">
+              {/* Miejsce na SVG drzewa */}
+              Miejsce na ilustracje po lewej stronie cytatu
+            </div>
+          ) : (
+            <img
+              src={leftImageCandidates[leftImageIndex]}
+              alt="Ilustracja dekoracyjna gabinetu"
+              className="h-full w-full object-cover"
+              onError={handleLeftImageError}
+            />
+          )}
         </div>
 
         <div className="space-y-4 text-center lg:text-left">
