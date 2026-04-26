@@ -1,6 +1,7 @@
 import type { LucideIcon } from 'lucide-react'
 import { ArrowRight, Bird, Feather } from 'lucide-react'
-import { Footer, Header } from './HomePage'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 interface ServiceCardData {
   title: string

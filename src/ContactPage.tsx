@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { CalendarCheck2, Mail, MapPin, Phone, UserRound } from 'lucide-react'
-import { Footer, Header } from './HomePage'
+import Header from './components/Header'
+import { Footer } from './HomePage'
 
 const BOOKING_URL =
   'https://www.znanylekarz.pl/michal-kasprzyca/psycholog-psychoterapeuta/wroclaw?utm_source=widget-doctor-307228&utm_medium=small&utm_campaign=&utm_content=www-gabinet-psychoterapeutyczny-org.filesusr.com#highlight-calendar'

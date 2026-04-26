@@ -1,5 +1,6 @@
 import { CalendarCheck2 } from 'lucide-react'
-import { Footer, Header } from './HomePage'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 interface PricingItem {
   name: string

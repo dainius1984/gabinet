@@ -1,21 +1,7 @@
-import { useEffect, useState } from 'react'
-import {
-  ArrowRight,
-  CalendarCheck2,
-  ExternalLink,
-  Feather,
-  MapPin,
-  Menu,
-  UserRound,
-  X,
-} from 'lucide-react'
-import { Link, useLocation } from 'react-router-dom'
-
-interface NavItem {
-  label: string
-  href: string
-  kind: 'route' | 'hash'
-}
+import { useState } from 'react'
+import { ArrowRight, UserRound } from 'lucide-react'
+import Footer from './components/Footer'
+import Header from './components/Header'
 
 interface Service {
   title: string
@@ -24,15 +10,6 @@ interface Service {
 }
 
 interface ServiceCardProps extends Service {}
-
-const navItems: NavItem[] = [
-  { label: 'Strona glowna', href: '/', kind: 'route' },
-  { label: 'O mnie', href: '/o-mnie', kind: 'route' },
-  { label: 'Uslugi', href: '/uslugi', kind: 'route' },
-  { label: 'Cennik', href: '/cennik', kind: 'route' },
-  { label: 'Strefa zdrowia', href: '/strefa-zdrowia', kind: 'route' },
-  { label: 'Kontakt', href: '/kontakt', kind: 'route' },
-]
 
 const services: Service[] = [
   {
@@ -48,154 +25,6 @@ const services: Service[] = [
     href: '#',
   },
 ]
-
-const GOOGLE_MAPS_LOCATION_URL = 'https://maps.app.goo.gl/sCujAYXbccwRYajg9'
-const GOOGLE_MAPS_EMBED_URL =
-  'https://www.google.com/maps?q=Zygmunta+Krasinskiego+1,+Wroclaw&output=embed'
-const BOOKING_URL =
-  'https://www.znanylekarz.pl/michal-kasprzyca/psycholog-psychoterapeuta/wroclaw?utm_source=widget-doctor-307228&utm_medium=small&utm_campaign=&utm_content=www-gabinet-psychoterapeutyczny-org.filesusr.com#highlight-calendar'
-
-function isNavItemActive(
-  item: NavItem,
-  pathname: string,
-  hash: string,
-): boolean {
-  if (item.kind === 'route') {
-    return pathname === item.href
-  }
-
-  const [itemPath, itemHash] = item.href.split('#')
-  const normalizedPath = itemPath || '/'
-  return pathname === normalizedPath && hash === `#${itemHash}`
-}
-
-export function Header() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const location = useLocation()
-
-  useEffect(() => {
-    setIsMobileMenuOpen(false)
-  }, [location.pathname, location.hash])
-
-  return (
-    <header className="sticky top-0 z-50 border-b border-stone-100 bg-white/95 backdrop-blur">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-start justify-between gap-4 py-4">
-          <div className="flex min-w-0 flex-1 gap-4">
-            <div className="shrink-0 font-serif leading-tight text-stone-700">
-              <p className="text-sm sm:text-base">Psycholog</p>
-              <p className="text-sm sm:text-base">Psychoterapeuta</p>
-              <p className="text-base font-semibold text-teal-700 sm:text-lg">
-                Michal Kasprzyca
-              </p>
-            </div>
-
-            <div
-              className="hidden w-px bg-stone-300 sm:block"
-              aria-hidden="true"
-            />
-
-            <p className="hidden max-w-md self-center text-sm text-stone-600 sm:block">
-              Konsultacje psychologiczne | Terapia indywidualna osob doroslych
-            </p>
-          </div>
-
-          <div className="hidden shrink-0 items-center gap-2 text-sm text-teal-700 md:flex">
-            <Feather className="h-4 w-4" aria-hidden="true" />
-            <a
-              href="tel:+48507084352"
-              className="font-medium transition hover:text-orange-500"
-            >
-              +48 507 084 352
-            </a>
-          </div>
-
-          <button
-            type="button"
-            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-            className="inline-flex items-center rounded-lg border border-stone-200 p-2 text-stone-700 transition hover:bg-stone-100 md:hidden"
-            aria-expanded={isMobileMenuOpen}
-            aria-controls="mobile-menu"
-            aria-label="Przelacz menu"
-          >
-            {isMobileMenuOpen ? (
-              <X className="h-5 w-5" aria-hidden="true" />
-            ) : (
-              <Menu className="h-5 w-5" aria-hidden="true" />
-            )}
-          </button>
-        </div>
-
-        <nav aria-label="Nawigacja glowna" className="hidden pb-4 md:block">
-          <ul className="flex flex-wrap items-center gap-2">
-            {navItems.map((item) => {
-              const isActive = isNavItemActive(
-                item,
-                location.pathname,
-                location.hash,
-              )
-              return (
-                <li key={item.label}>
-                  <Link
-                    to={item.href}
-                    className={`inline-flex rounded-md px-4 py-2 text-sm font-medium transition ${
-                      isActive
-                        ? 'bg-orange-500 text-white shadow-sm'
-                        : 'text-stone-700 hover:bg-stone-100'
-                    }`}
-                    aria-current={isActive ? 'page' : undefined}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              )
-            })}
-          </ul>
-        </nav>
-
-        <div
-          id="mobile-menu"
-          className={`overflow-hidden transition-all duration-200 md:hidden ${
-            isMobileMenuOpen ? 'max-h-80 pb-4' : 'max-h-0'
-          }`}
-        >
-          <div className="mb-3 flex items-center gap-2 text-sm text-teal-700">
-            <Feather className="h-4 w-4" aria-hidden="true" />
-            <a href="tel:+48507084352" className="font-medium">
-              +48 507 084 352
-            </a>
-          </div>
-          <nav aria-label="Nawigacja mobilna">
-            <ul className="space-y-1">
-              {navItems.map((item) => {
-                const isActive = isNavItemActive(
-                  item,
-                  location.pathname,
-                  location.hash,
-                )
-                return (
-                  <li key={`mobile-${item.label}`}>
-                    <Link
-                      to={item.href}
-                      className={`block rounded-md px-3 py-2 text-sm font-medium ${
-                        isActive
-                          ? 'bg-orange-500 text-white'
-                          : 'text-stone-700 hover:bg-stone-100'
-                      }`}
-                      aria-current={isActive ? 'page' : undefined}
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                )
-              })}
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
-  )
-}
 
 function Hero() {
   const [isProfileImageMissing, setIsProfileImageMissing] = useState(false)
@@ -319,88 +148,6 @@ function HealthZoneSection() {
         </p>
       </div>
     </section>
-  )
-}
-
-function FloatingBookingButton() {
-  return (
-    <div className="fixed inset-x-4 bottom-4 z-[60] sm:inset-x-auto sm:right-5">
-      <a
-        href={BOOKING_URL}
-        target="_blank"
-        rel="noreferrer"
-        className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-green-600 px-6 py-3 text-base font-bold text-white shadow-[0_12px_30px_-12px_rgba(22,163,74,0.9)] ring-2 ring-green-300 transition hover:bg-green-700 hover:ring-green-400 sm:w-auto"
-        aria-label="Umow wizyte przez ZnanyLekarz (otworzy sie w nowej karcie)"
-      >
-        <CalendarCheck2 className="h-5 w-5" aria-hidden="true" />
-        Umow wizyte
-        <ExternalLink className="h-4 w-4" aria-hidden="true" />
-      </a>
-    </div>
-  )
-}
-
-export function Footer() {
-  return (
-    <>
-      <FloatingBookingButton />
-      <footer id="contact" className="border-t border-stone-200 bg-stone-50 pb-24 sm:pb-14">
-        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="overflow-hidden rounded-xl border border-stone-200 bg-gray-200 shadow-sm">
-          <iframe
-            src={GOOGLE_MAPS_EMBED_URL}
-            title="Mapa Google - Zygmunta Krasinskiego 1, Wroclaw"
-            className="h-64 w-full border-0"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-        </div>
-
-        <div className="mt-4 flex items-center justify-center gap-2 text-sm text-stone-600">
-          <MapPin className="h-4 w-4 text-orange-500" aria-hidden="true" />
-          <a
-            href={GOOGLE_MAPS_LOCATION_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="font-medium text-teal-700 underline-offset-2 transition hover:text-orange-500 hover:underline"
-          >
-            Zobacz lokalizacje gabinetu w Google Maps
-          </a>
-        </div>
-
-        <div className="mt-8 flex justify-center">
-          <a
-            href={GOOGLE_MAPS_LOCATION_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg border border-orange-200 bg-white px-5 py-2 text-sm font-semibold text-teal-700 transition hover:border-orange-300 hover:text-orange-500"
-          >
-            <MapPin className="h-5 w-5 text-teal-700" aria-hidden="true" />
-            Nawiguj do gabinetu
-          </a>
-        </div>
-
-        <div className="mt-6 flex justify-center">
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-xl bg-green-600 px-7 py-3 text-base font-bold text-white shadow-[0_12px_30px_-12px_rgba(22,163,74,0.9)] ring-2 ring-green-300 transition hover:bg-green-700 hover:ring-green-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-700"
-            aria-label="Umow wizyte przez ZnanyLekarz (otworzy sie w nowej karcie)"
-          >
-            <CalendarCheck2 className="h-5 w-5" aria-hidden="true" />
-            Umow wizyte - ZnanyLekarz
-            <ExternalLink className="h-4 w-4" aria-hidden="true" />
-          </a>
-        </div>
-
-        <p className="mt-8 text-center text-sm text-stone-500">
-          © {new Date().getFullYear()} Michal Kasprzyca. Wszelkie prawa
-          zastrzezone.
-        </p>
-        </div>
-      </footer>
-    </>
   )
 }
 

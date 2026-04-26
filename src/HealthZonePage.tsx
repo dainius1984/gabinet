@@ -1,6 +1,7 @@
 import type { LucideIcon } from 'lucide-react'
 import { Activity, CalendarCheck2, Coffee, ExternalLink, Leaf } from 'lucide-react'
-import { Footer, Header } from './HomePage'
+import Header from './components/Header'
+import { Footer } from './HomePage'
 
 interface HealthPillar {
   title: string
