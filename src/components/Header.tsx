@@ -73,30 +73,52 @@ export default function Header() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-3 py-3">
-          <div className="flex min-w-0 flex-1 items-center gap-3">
-            <div className="shrink-0 font-serif leading-tight text-stone-700">
-              <p className="text-xs sm:text-sm">Psycholog</p>
-              <p className="text-xs sm:text-sm">Psychoterapeuta</p>
-              <p className="text-sm font-semibold text-teal-700 sm:text-base">
+          <Link to="/" className="flex min-w-0 items-center gap-3">
+            <div className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-teal-700 text-xs font-bold tracking-wide text-white">
+              MK
+            </div>
+            <div className="min-w-0">
+              <p className="truncate font-serif text-base text-teal-700 sm:text-lg">
                 Michal Kasprzyca
               </p>
+              <p className="hidden text-xs text-stone-500 sm:block">
+                Psycholog i psychoterapeuta
+              </p>
             </div>
+          </Link>
 
-            <div
-              className="hidden h-10 w-px bg-stone-300 md:block"
-              aria-hidden="true"
-            />
-
-            <p className="hidden max-w-md text-xs text-stone-600 md:block lg:text-sm">
-              Konsultacje psychologiczne | Terapia indywidualna osob doroslych
-            </p>
-          </div>
+          <nav aria-label="Nawigacja glowna" className="hidden md:block">
+            <ul className="flex flex-wrap items-center gap-1.5">
+              {navItems.map((item) => {
+                const isActive = isNavItemActive(
+                  item,
+                  location.pathname,
+                  location.hash,
+                )
+                return (
+                  <li key={item.label}>
+                    <Link
+                      to={item.href}
+                      className={`inline-flex rounded-md px-3 py-1.5 text-sm font-medium transition ${
+                        isActive
+                          ? 'bg-orange-500 text-white shadow-sm'
+                          : 'text-stone-700 hover:bg-stone-100'
+                      }`}
+                      aria-current={isActive ? 'page' : undefined}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                )
+              })}
+            </ul>
+          </nav>
 
           <div className="hidden shrink-0 items-center gap-2 text-sm text-teal-700 lg:flex">
             <Feather className="h-4 w-4" aria-hidden="true" />
             <a
               href="tel:+48507084352"
-              className="font-medium transition hover:text-orange-500"
+              className="font-semibold transition hover:text-orange-500"
             >
               +48 507 084 352
             </a>
@@ -118,42 +140,15 @@ export default function Header() {
           </button>
         </div>
 
-        <nav aria-label="Nawigacja glowna" className="hidden pb-3 md:block">
-          <ul className="flex flex-wrap items-center gap-1.5">
-            {navItems.map((item) => {
-              const isActive = isNavItemActive(
-                item,
-                location.pathname,
-                location.hash,
-              )
-              return (
-                <li key={item.label}>
-                  <Link
-                    to={item.href}
-                    className={`inline-flex rounded-md px-3 py-1.5 text-sm font-medium transition ${
-                      isActive
-                        ? 'bg-orange-500 text-white shadow-sm'
-                        : 'text-stone-700 hover:bg-stone-100'
-                    }`}
-                    aria-current={isActive ? 'page' : undefined}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              )
-            })}
-          </ul>
-        </nav>
-
         <div
           id="mobile-menu"
           className={`overflow-hidden transition-all duration-200 md:hidden ${
-            isMobileMenuOpen ? 'max-h-96 pb-3' : 'max-h-0'
+            isMobileMenuOpen ? 'max-h-[420px] pb-3' : 'max-h-0'
           }`}
         >
           <div className="mb-3 flex items-center gap-2 text-sm text-teal-700">
             <Feather className="h-4 w-4" aria-hidden="true" />
-            <a href="tel:+48507084352" className="font-medium">
+            <a href="tel:+48507084352" className="font-semibold">
               +48 507 084 352
             </a>
           </div>
