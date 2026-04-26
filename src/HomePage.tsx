@@ -50,8 +50,8 @@ function Hero() {
     <section className="bg-stone-50">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
         <div className="grid items-center gap-6 lg:grid-cols-[minmax(220px,280px)_1fr_minmax(220px,280px)] lg:gap-10">
-          <div className="group order-2 mx-auto w-full max-w-[280px] lg:order-1">
-            <div className="h-52 overflow-hidden rounded-2xl border border-teal-200 bg-white shadow-sm transition duration-300 group-hover:shadow-md sm:h-64 lg:h-72">
+          <div className="group order-2 mx-auto w-full max-w-[300px] lg:order-1">
+            <div className="aspect-[4/3] overflow-hidden rounded-2xl border border-teal-200 bg-white shadow-sm transition duration-300 group-hover:shadow-md">
               {isLeftImageMissing ? (
                 <div className="flex h-full items-center justify-center p-6 text-center text-sm text-stone-500">
                   {/* Miejsce na SVG drzewa */}
@@ -61,7 +61,7 @@ function Hero() {
                 <img
                   src={leftImageCandidates[leftImageIndex]}
                   alt="Ilustracja dekoracyjna gabinetu"
-                  className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                  className="h-full w-full object-cover object-center transition duration-500 group-hover:scale-[1.03]"
                   onError={handleLeftImageError}
                 />
               )}
