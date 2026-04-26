@@ -219,46 +219,52 @@ function Hero() {
 
   return (
     <section className="bg-stone-50">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-3 lg:items-center lg:gap-12 lg:px-8 lg:py-20">
-        <div className="hidden min-h-[260px] overflow-hidden rounded-2xl border border-teal-200 bg-white shadow-sm lg:block">
-          {isLeftImageMissing ? (
-            <div className="flex h-full items-center justify-center p-6 text-center text-sm text-stone-500">
-              {/* Miejsce na SVG drzewa */}
-              Miejsce na ilustracje po lewej stronie cytatu
+      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+        <div className="grid items-center gap-6 lg:grid-cols-[minmax(220px,280px)_1fr_minmax(220px,280px)] lg:gap-10">
+          <div className="group order-2 mx-auto w-full max-w-[280px] lg:order-1">
+            <div className="h-52 overflow-hidden rounded-2xl border border-teal-200 bg-white shadow-sm transition duration-300 group-hover:shadow-md sm:h-64 lg:h-72">
+              {isLeftImageMissing ? (
+                <div className="flex h-full items-center justify-center p-6 text-center text-sm text-stone-500">
+                  {/* Miejsce na SVG drzewa */}
+                  Miejsce na ilustracje po lewej stronie cytatu
+                </div>
+              ) : (
+                <img
+                  src={leftImageCandidates[leftImageIndex]}
+                  alt="Ilustracja dekoracyjna gabinetu"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                  onError={handleLeftImageError}
+                />
+              )}
             </div>
-          ) : (
-            <img
-              src={leftImageCandidates[leftImageIndex]}
-              alt="Ilustracja dekoracyjna gabinetu"
-              className="h-full w-full object-cover"
-              onError={handleLeftImageError}
-            />
-          )}
-        </div>
+          </div>
 
-        <div className="space-y-4 text-center lg:text-left">
-          <p className="font-serif text-3xl leading-tight text-teal-700 sm:text-4xl">
-            ZYCIE DAJE KAZDEMU TYLE, ILE SAM MA ODWAGE SOBIE Z NIEGO WZIAC
-          </p>
-          <p className="text-sm uppercase tracking-[0.18em] text-stone-500">
-            - Jacek Walkiewicz
-          </p>
-        </div>
+          <div className="order-1 space-y-4 text-center lg:order-2 lg:text-left">
+            <p className="font-serif text-3xl leading-tight text-teal-700 sm:text-4xl">
+              ZYCIE DAJE KAZDEMU TYLE, ILE SAM MA ODWAGE SOBIE Z NIEGO WZIAC
+            </p>
+            <p className="text-sm uppercase tracking-[0.18em] text-stone-500">
+              - Jacek Walkiewicz
+            </p>
+          </div>
 
-        <div className="mx-auto flex h-64 w-64 items-center justify-center overflow-hidden rounded-2xl border-2 border-teal-200 bg-white shadow-md sm:h-72 sm:w-72">
-          {isProfileImageMissing ? (
-            <>
-              <UserRound className="h-16 w-16 text-stone-400" aria-hidden="true" />
-              <span className="sr-only">Zdjecie profilowe psychoterapeuty</span>
-            </>
-          ) : (
-            <img
-              src="/img/1.jpg"
-              alt="Michal Kasprzyca"
-              className="h-full w-full scale-110 object-cover object-[38%_25%]"
-              onError={() => setIsProfileImageMissing(true)}
-            />
-          )}
+          <div className="group order-3 mx-auto w-full max-w-[280px]">
+            <div className="h-52 overflow-hidden rounded-2xl border-2 border-teal-200 bg-white shadow-md transition duration-300 group-hover:shadow-lg sm:h-64 lg:h-72">
+              {isProfileImageMissing ? (
+                <div className="flex h-full items-center justify-center">
+                  <UserRound className="h-16 w-16 text-stone-400" aria-hidden="true" />
+                  <span className="sr-only">Zdjecie profilowe psychoterapeuty</span>
+                </div>
+              ) : (
+                <img
+                  src="/img/1.jpg"
+                  alt="Michal Kasprzyca"
+                  className="h-full w-full scale-110 object-cover object-[38%_25%] transition duration-500 group-hover:scale-[1.13]"
+                  onError={() => setIsProfileImageMissing(true)}
+                />
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </section>
