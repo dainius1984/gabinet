@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ArrowRight, UserRound } from 'lucide-react'
+import { ArrowRight, Quote, UserRound } from 'lucide-react'
 import Footer from './components/Footer'
 import Header from './components/Header'
 
@@ -28,59 +28,39 @@ const services: Service[] = [
 
 function Hero() {
   const [isProfileImageMissing, setIsProfileImageMissing] = useState(false)
-  const leftImageCandidates = [
-    '/img/2.img',
-    '/img/2.jpg',
-    '/img/2.jpeg',
-    '/img/2.png',
-    '/img/2.webp',
-  ]
-  const [leftImageIndex, setLeftImageIndex] = useState(0)
-  const [isLeftImageMissing, setIsLeftImageMissing] = useState(false)
-
-  const handleLeftImageError = () => {
-    if (leftImageIndex < leftImageCandidates.length - 1) {
-      setLeftImageIndex((prev) => prev + 1)
-      return
-    }
-    setIsLeftImageMissing(true)
-  }
 
   return (
-    <section className="bg-stone-50">
+    <section className="bg-gradient-to-b from-stone-50 to-white">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-        <div className="grid items-center gap-6 lg:grid-cols-[minmax(220px,280px)_1fr_minmax(220px,280px)] lg:gap-10">
-          <div className="group order-2 mx-auto w-full max-w-[300px] lg:order-1">
-            <div className="aspect-[4/3] overflow-hidden rounded-2xl border border-teal-200 bg-white shadow-sm transition duration-300 group-hover:shadow-md">
-              {isLeftImageMissing ? (
-                <div className="flex h-full items-center justify-center p-6 text-center text-sm text-stone-500">
-                  {/* Miejsce na SVG drzewa */}
-                  Miejsce na ilustracje po lewej stronie cytatu
-                </div>
-              ) : (
-                <img
-                  src={leftImageCandidates[leftImageIndex]}
-                  alt="Ilustracja dekoracyjna gabinetu"
-                  className="h-full w-full object-cover object-center transition duration-500 group-hover:scale-[1.03]"
-                  onError={handleLeftImageError}
-                />
-              )}
+        <div className="grid items-center gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:gap-12">
+          <div className="order-2 lg:order-1">
+            <div className="rounded-3xl border border-stone-200 bg-white p-6 shadow-sm sm:p-8">
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-teal-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-teal-700">
+                <Quote className="h-3.5 w-3.5" aria-hidden="true" />
+                Refleksja na dzis
+              </div>
+              <p className="font-serif text-3xl leading-tight text-teal-700 sm:text-4xl lg:text-5xl">
+                ZYCIE DAJE KAZDEMU TYLE, ILE SAM MA ODWAGE SOBIE Z NIEGO WZIAC
+              </p>
+              <p className="mt-5 text-sm uppercase tracking-[0.18em] text-stone-500">
+                - Jacek Walkiewicz
+              </p>
+
+              <div className="mt-6 flex flex-wrap gap-2">
+                <span className="rounded-full border border-teal-200 bg-teal-50 px-3 py-1 text-xs font-medium text-teal-700">
+                  Terapia osob doroslych
+                </span>
+                <span className="rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-xs font-medium text-orange-600">
+                  Sesja 50 minut
+                </span>
+              </div>
             </div>
           </div>
 
-          <div className="order-1 space-y-4 text-center lg:order-2 lg:text-left">
-            <p className="font-serif text-3xl leading-tight text-teal-700 sm:text-4xl">
-              ZYCIE DAJE KAZDEMU TYLE, ILE SAM MA ODWAGE SOBIE Z NIEGO WZIAC
-            </p>
-            <p className="text-sm uppercase tracking-[0.18em] text-stone-500">
-              - Jacek Walkiewicz
-            </p>
-          </div>
-
-          <div className="group order-3 mx-auto w-full max-w-[280px]">
-            <div className="h-52 overflow-hidden rounded-2xl border-2 border-teal-200 bg-white shadow-md transition duration-300 group-hover:shadow-lg sm:h-64 lg:h-72">
+          <div className="group order-1 mx-auto w-full max-w-[320px] lg:order-2">
+            <div className="overflow-hidden rounded-3xl border-2 border-teal-200 bg-white shadow-md transition duration-300 group-hover:shadow-lg">
               {isProfileImageMissing ? (
-                <div className="flex h-full items-center justify-center">
+                <div className="flex aspect-[4/5] items-center justify-center">
                   <UserRound className="h-16 w-16 text-stone-400" aria-hidden="true" />
                   <span className="sr-only">Zdjecie profilowe psychoterapeuty</span>
                 </div>
@@ -88,11 +68,14 @@ function Hero() {
                 <img
                   src="/img/1.jpg"
                   alt="Michal Kasprzyca"
-                  className="h-full w-full scale-110 object-cover object-[38%_25%] transition duration-500 group-hover:scale-[1.13]"
+                  className="aspect-[4/5] w-full scale-110 object-cover object-[38%_25%] transition duration-500 group-hover:scale-[1.13]"
                   onError={() => setIsProfileImageMissing(true)}
                 />
               )}
             </div>
+            <p className="mt-3 text-center text-sm text-stone-500">
+              mgr Michal Kasprzyca - psycholog, psychoterapeuta
+            </p>
           </div>
         </div>
       </div>
