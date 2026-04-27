@@ -1,5 +1,5 @@
 import type { LucideIcon } from 'lucide-react'
-import { Activity, CalendarCheck2, Coffee, ExternalLink, Leaf } from 'lucide-react'
+import { Activity, Coffee, ExternalLink, Leaf } from 'lucide-react'
 import Header from './components/Header'
 import Footer from './components/Footer'
 
@@ -12,9 +12,6 @@ interface HealthPillar {
 interface HealthPillarCardProps extends HealthPillar {}
 
 const PARTNER_URL = 'http://chiropraktyka.wroclaw.pl/'
-const BOOKING_URL =
-  'https://www.znanylekarz.pl/michal-kasprzyca/psycholog-psychoterapeuta/wroclaw?utm_source=widget-doctor-307228&utm_medium=small&utm_campaign=&utm_content=www-gabinet-psychoterapeutyczny-org.filesusr.com#highlight-calendar'
-
 const healthPillars: HealthPillar[] = [
   {
     title: 'Dieta',
@@ -166,25 +163,6 @@ export default function HealthZonePage() {
           </div>
         </section>
 
-        <section className="bg-stone-50 py-14 sm:py-16">
-          <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-            <div className="rounded-2xl border border-orange-200 bg-white p-8 text-center shadow-sm sm:p-10">
-              <p className="font-serif text-2xl text-teal-700 sm:text-3xl">
-                Zadbaj o siebie juz dzis. Umow sie na konsultacje.
-              </p>
-              <a
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-6 inline-flex items-center gap-2 rounded-xl bg-green-600 px-8 py-3.5 text-base font-bold text-white shadow-[0_12px_30px_-12px_rgba(22,163,74,0.9)] ring-2 ring-green-300 transition hover:bg-green-700 hover:ring-green-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-700"
-                aria-label="Umow wizyte online przez ZnanyLekarz"
-              >
-                <CalendarCheck2 className="h-5 w-5" aria-hidden="true" />
-                Umow wizyte online
-              </a>
-            </div>
-          </div>
-        </section>
       </main>
 
       <Footer />

@@ -28,9 +28,9 @@ const pricingItems: PricingItem[] = [
 
 function PricingRow({ name, duration, price }: PricingRowProps) {
   return (
-    <article className="rounded-xl border border-stone-200 bg-white px-5 py-6 shadow-sm sm:px-8 sm:py-7">
-      <div className="flex items-end gap-4">
-        <div className="shrink-0">
+    <article className="rounded-xl border border-stone-200 bg-white px-5 py-5 shadow-sm sm:px-8 sm:py-7">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:gap-4">
+        <div className="min-w-0">
           <h3 className="font-serif text-xl font-semibold text-teal-700 sm:text-2xl">
             {name}
           </h3>
@@ -38,11 +38,11 @@ function PricingRow({ name, duration, price }: PricingRowProps) {
         </div>
 
         <div
-          className="mb-2 hidden h-px flex-1 border-b border-dotted border-orange-300 sm:block"
+          className="hidden h-px flex-1 border-b border-dotted border-orange-300 sm:block"
           aria-hidden="true"
         />
 
-        <p className="ml-auto shrink-0 text-2xl font-bold text-orange-500 sm:text-3xl">
+        <p className="border-t border-dotted border-orange-200 pt-3 text-right text-2xl font-bold text-orange-500 sm:ml-auto sm:border-t-0 sm:pt-0 sm:text-3xl">
           {price}
         </p>
       </div>
@@ -91,7 +91,7 @@ export default function PricingPage() {
               </svg>
             </div>
 
-            <div className="space-y-5 sm:space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               {pricingItems.map((item) => (
                 <PricingRow key={item.name} {...item} />
               ))}
@@ -134,7 +134,7 @@ export default function PricingPage() {
               href={BOOKING_URL}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-green-600 px-8 py-3.5 text-base font-bold text-white shadow-[0_12px_30px_-12px_rgba(22,163,74,0.9)] ring-2 ring-green-300 transition hover:bg-green-700 hover:ring-green-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-700"
+              className="inline-flex items-center gap-2 rounded-lg border border-green-700 bg-green-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-700 sm:px-7 sm:text-base"
               aria-label="Umow wizyte online przez ZnanyLekarz"
             >
               <CalendarCheck2 className="h-5 w-5" aria-hidden="true" />
