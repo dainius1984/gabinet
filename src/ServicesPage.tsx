@@ -1,5 +1,6 @@
 import type { LucideIcon } from 'lucide-react'
 import { ArrowRight, Bird, Feather } from 'lucide-react'
+import BookingInline from './components/BookingInline'
 import Header from './components/Header'
 import Footer from './components/Footer'
 
@@ -54,6 +55,9 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-white font-sans text-stone-700">
       <Header />
+      <div className="mx-auto flex max-w-7xl justify-center px-4 pt-6 sm:px-6 lg:px-8">
+        <BookingInline compact />
+      </div>
 
       <main className="bg-stone-50 py-14 sm:py-20">
         <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

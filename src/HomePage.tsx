@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { ArrowRight, Quote, UserRound } from 'lucide-react'
+import { ArrowRight, UserRound } from 'lucide-react'
+import BookingInline from './components/BookingInline'
 import Footer from './components/Footer'
 import Header from './components/Header'
 
@@ -34,22 +35,21 @@ function Hero() {
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
         <div className="grid items-center gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:gap-12">
           <div className="order-2 lg:order-1">
-            <div className="rounded-3xl border border-stone-200 bg-white p-6 shadow-sm sm:p-8">
-              <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-teal-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-teal-700">
-                <Quote className="h-3.5 w-3.5" aria-hidden="true" />
-                Refleksja na dzis
-              </div>
+            <div className="space-y-6 rounded-3xl border border-stone-200 bg-white p-6 shadow-sm sm:p-8">
               <p className="font-serif text-3xl leading-tight text-teal-700 sm:text-4xl lg:text-5xl">
                 ZYCIE DAJE KAZDEMU TYLE, ILE SAM MA ODWAGE SOBIE Z NIEGO WZIAC
               </p>
-              <p className="mt-5 text-sm uppercase tracking-[0.18em] text-stone-500">
+              <p className="text-sm uppercase tracking-[0.18em] text-stone-500">
                 - Jacek Walkiewicz
               </p>
 
-              <div className="mt-6 flex flex-wrap gap-2">
-                <span className="rounded-full border border-teal-200 bg-teal-50 px-3 py-1 text-xs font-medium text-teal-700">
-                  Terapia osob doroslych
-                </span>
+              <p className="max-w-xl leading-relaxed text-stone-600">
+                Profesjonalne wsparcie psychologiczne i psychoterapia osob
+                doroslych w spokojnej, bezpiecznej atmosferze.
+              </p>
+
+              <div className="flex flex-wrap items-center gap-3">
+                <BookingInline compact />
                 <span className="rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-xs font-medium text-orange-600">
                   Sesja 50 minut
                 </span>

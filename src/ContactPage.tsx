@@ -1,4 +1,5 @@
 import { Mail, MapPin, Phone } from 'lucide-react'
+import BookingInline from './components/BookingInline'
 import Header from './components/Header'
 import Footer from './components/Footer'
 const GOOGLE_MAPS_URL = 'https://maps.app.goo.gl/sCujAYXbccwRYajg9'
@@ -9,6 +10,9 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white font-sans text-stone-700">
       <Header />
+      <div className="mx-auto flex max-w-7xl justify-center px-4 pt-6 sm:px-6 lg:px-8">
+        <BookingInline compact />
+      </div>
 
       <main>
         <section className="bg-white py-14 sm:py-16">
