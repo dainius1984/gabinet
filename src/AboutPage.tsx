@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { UserRound } from 'lucide-react'
 import BookingInline from './components/BookingInline'
 import Header from './components/Header'
@@ -104,25 +105,35 @@ function PartnerCard({
 }
 
 export default function AboutPage() {
+  const [isProfileImageMissing, setIsProfileImageMissing] = useState(false)
+
   return (
     <div className="min-h-screen bg-white font-sans text-stone-700">
       <Header />
-      <div className="mx-auto flex max-w-7xl justify-center px-4 pt-6 sm:px-6 lg:px-8">
-        <BookingInline compact />
-      </div>
 
       <main className="bg-stone-50 py-12 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-3 lg:gap-12">
             <aside className="order-1 space-y-6 lg:order-2">
-              <div className="mx-auto flex h-64 w-64 items-center justify-center rounded-2xl border-2 border-teal-200 bg-white shadow-md sm:h-72 sm:w-72 lg:mx-0 lg:h-80 lg:w-full">
-                <UserRound
-                  className="h-16 w-16 text-stone-400"
-                  aria-hidden="true"
-                />
-                <span className="sr-only">
-                  Zdjęcie profilowe psychoterapeuty
-                </span>
+              <div className="mx-auto h-64 w-64 overflow-hidden rounded-2xl border-2 border-teal-200 bg-white shadow-md sm:h-72 sm:w-72 lg:mx-0 lg:h-80 lg:w-full">
+                {isProfileImageMissing ? (
+                  <div className="flex h-full w-full items-center justify-center">
+                    <UserRound
+                      className="h-16 w-16 text-stone-400"
+                      aria-hidden="true"
+                    />
+                    <span className="sr-only">
+                      Zdjęcie profilowe psychoterapeuty
+                    </span>
+                  </div>
+                ) : (
+                  <img
+                    src="/img/1.jpg"
+                    alt="Michał Kasprzyca"
+                    className="h-full w-full scale-110 object-cover object-[38%_25%]"
+                    onError={() => setIsProfileImageMissing(true)}
+                  />
+                )}
               </div>
 
               <section className="rounded-xl border border-stone-200 bg-white p-6 shadow-sm">
@@ -156,6 +167,9 @@ export default function AboutPage() {
               <p className="mt-3 text-base font-semibold text-stone-500 sm:text-lg">
                 mgr Michał Kasprzyca - psycholog, psychoterapeuta
               </p>
+              <div className="mt-5">
+                <BookingInline compact />
+              </div>
 
               <div className="mt-8 space-y-4 text-gray-700 leading-relaxed">
                 <p>

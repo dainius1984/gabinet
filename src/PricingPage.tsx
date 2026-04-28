@@ -51,9 +51,6 @@ export default function PricingPage() {
   return (
     <div className="min-h-screen bg-white font-sans text-stone-700">
       <Header />
-      <div className="mx-auto flex max-w-7xl justify-center px-4 pt-6 sm:px-6 lg:px-8">
-        <BookingInline compact />
-      </div>
 
       <main className="relative overflow-hidden bg-stone-50 py-12 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -66,6 +63,9 @@ export default function PricingPage() {
             </h1>
 
             <div className="mx-auto mb-10 mt-5 w-40 border-b-2 border-dotted border-orange-300 sm:mb-12" />
+            <div className="flex justify-center">
+              <BookingInline compact />
+            </div>
           </section>
 
           <section className="relative mx-auto max-w-4xl" aria-label="Lista cen">

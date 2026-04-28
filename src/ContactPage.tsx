@@ -10,9 +10,6 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white font-sans text-stone-700">
       <Header />
-      <div className="mx-auto flex max-w-7xl justify-center px-4 pt-6 sm:px-6 lg:px-8">
-        <BookingInline compact />
-      </div>
 
       <main>
         <section className="bg-white py-14 sm:py-16">
@@ -60,6 +57,9 @@ export default function ContactPage() {
                   Zygmunta Krasinskiego 1, Wroclaw
                 </a>
               </article>
+            </div>
+            <div className="mt-8 flex justify-center">
+              <BookingInline compact />
             </div>
           </div>
         </section>
