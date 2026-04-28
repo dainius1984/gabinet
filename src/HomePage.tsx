@@ -17,13 +17,13 @@ const services: Service[] = [
     title: 'Konsultacje psychologiczne',
     description:
       'Jesli doswiadczasz problemow w relacjach z innymi, masz trudnosci wychowawcze ze swoimi dziecmi, doswiadczasz powracajacych obaw i lekow, zamartwiasz sie czyms lub po prostu chcesz w swoim zyciu cos zmienic na lepsze i potrzebujesz wsparcia, serdecznie zapraszam Cie na konsultacje psychologiczna. Podczas spotkania spokojnie przyjrzymy sie Twojej sytuacji i wspolnie wybierzemy najlepsza forme pomocy.',
-    href: '#',
+    href: '/uslugi#konsultacje',
   },
   {
     title: 'Terapia indywidualna osob doroslych',
     description:
       'Zmianom w naszym zyciu prawie zawsze towarzyszy stres lub lek. Ogromnie pomocna w takich sytuacjach jest mozliwosc systematycznego korzystania ze wsparcia i doswiadczenia terapeuty. W bezpiecznej relacji terapeutycznej mozemy wspolnie przygladac sie sytuacjom problemowym, rozumiec ich zrodla oraz wdrazac zmiany, ktore przywroca poczucie sprawczosci i wewnetrznej rownowagi.',
-    href: '#',
+    href: '/uslugi#terapia-indywidualna',
   },
 ]
 
@@ -129,6 +129,40 @@ function HealthZoneSection() {
           Wkrotce znajdziesz tutaj materialy psychoedukacyjne i wskazowki
           wspierajace codzienny dobrostan psychiczny.
         </p>
+
+        <div className="mx-auto mt-10 grid max-w-5xl gap-6 md:grid-cols-2">
+          <a
+            href="/strefa-zdrowia#artykul-relaks"
+            className="rounded-xl border border-stone-200 bg-stone-50 p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+          >
+            <p className="text-xs font-semibold uppercase tracking-wide text-orange-500">
+              Artykul
+            </p>
+            <h3 className="mt-2 font-serif text-2xl text-teal-700">
+              5 sygnalow, ze potrzebujesz zatrzymania
+            </h3>
+            <p className="mt-3 leading-relaxed text-stone-600">
+              Jak rozpoznac pierwsze objawy przeciążenia i bezpiecznie wracac do
+              rownowagi.
+            </p>
+          </a>
+
+          <a
+            href="/strefa-zdrowia#artykul-granice"
+            className="rounded-xl border border-stone-200 bg-stone-50 p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+          >
+            <p className="text-xs font-semibold uppercase tracking-wide text-orange-500">
+              Artykul
+            </p>
+            <h3 className="mt-2 font-serif text-2xl text-teal-700">
+              Granice psychiczne w codziennym zyciu
+            </h3>
+            <p className="mt-3 leading-relaxed text-stone-600">
+              Praktyczny sposob na stawianie granic bez poczucia winy i bez
+              konfliktu.
+            </p>
+          </a>
+        </div>
       </div>
     </section>
   )

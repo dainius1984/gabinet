@@ -112,6 +112,73 @@ export default function HealthZonePage() {
         <section className="bg-stone-50 py-14 sm:py-16">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <h2 className="text-center font-serif text-3xl text-teal-700 sm:text-4xl">
+              Artykuly
+            </h2>
+
+            <div className="mt-8 grid gap-6 lg:grid-cols-2">
+              <article
+                id="artykul-relaks"
+                className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm sm:p-8"
+              >
+                <p className="text-xs font-semibold uppercase tracking-wide text-orange-500">
+                  Czas na relaks
+                </p>
+                <h3 className="mt-2 font-serif text-2xl text-teal-700">
+                  5 sygnalow, ze potrzebujesz zatrzymania
+                </h3>
+                <p className="mt-4 leading-relaxed text-stone-600">
+                  Przeciazenie psychiczne czesto rozwija sie stopniowo. Najpierw
+                  pojawia sie stale zmeczenie, trudnosci ze snem i spadek
+                  koncentracji. Nastepnie rosnie drazliwosc, a codzienne zadania
+                  zaczynaja kosztowac znacznie wiecej energii niz zwykle.
+                </p>
+                <p className="mt-3 leading-relaxed text-stone-600">
+                  Dobrze dzialaja male rytualy regeneracyjne: regularne przerwy,
+                  spacer bez telefonu, spokojny oddech i ograniczenie bodzcow
+                  wieczorem. Taki plan nie musi byc idealny - wazne, aby byl
+                  powtarzalny i realny.
+                </p>
+                <p className="mt-3 leading-relaxed text-stone-600">
+                  Jesli objawy utrzymuja sie dlugo, warto skorzystac z konsultacji
+                  i uporzadkowac priorytety zanim napiecie przejdzie w stan
+                  chroniczny.
+                </p>
+              </article>
+
+              <article
+                id="artykul-granice"
+                className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm sm:p-8"
+              >
+                <p className="text-xs font-semibold uppercase tracking-wide text-orange-500">
+                  Relacje i granice
+                </p>
+                <h3 className="mt-2 font-serif text-2xl text-teal-700">
+                  Granice psychiczne w codziennym zyciu
+                </h3>
+                <p className="mt-4 leading-relaxed text-stone-600">
+                  Stawianie granic nie oznacza dystansu wobec ludzi. Oznacza
+                  jasne komunikowanie, na co sie zgadzasz, a na co nie - z
+                  szacunkiem dla siebie i innych. To podstawa zdrowych relacji.
+                </p>
+                <p className="mt-3 leading-relaxed text-stone-600">
+                  Dobre granice sa konkretne: "Potrzebuje czasu do jutra",
+                  "Nie moge teraz rozmawiac", "Taki sposob rozmowy mi nie sluzy".
+                  Krotkie, spokojne komunikaty zmniejszaja napiecie i pomagaja
+                  unikac nieporozumien.
+                </p>
+                <p className="mt-3 leading-relaxed text-stone-600">
+                  Jesli pojawia sie poczucie winy, warto pamietac, ze granice
+                  nie oddalaja - one porzadkuja relacje i chronia zasoby
+                  psychiczne potrzebne do codziennego funkcjonowania.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-stone-50 py-14 sm:py-16">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-center font-serif text-3xl text-teal-700 sm:text-4xl">
               Partner dla zdrowia ciala
             </h2>
 

@@ -1,5 +1,5 @@
 import type { LucideIcon } from 'lucide-react'
-import { ArrowRight, Bird, Feather } from 'lucide-react'
+import { ArrowRight, Bird, CheckCircle2, Feather } from 'lucide-react'
 import BookingInline from './components/BookingInline'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -18,14 +18,14 @@ const serviceCards: ServiceCardData[] = [
     title: 'Konsultacje',
     description:
       'Jesli doswiadczasz problemow w relacjach z innymi, masz trudnosci wychowawcze ze swoimi dziecmi, doswiadczasz Ci powracajace obawy i leki, zamartwiasz sie czyms lub po prostu chcesz w swoim zyciu cos zmienic na lepsze i potrzebujesz wsparcia, serdecznie zapraszam Cie na konsultacje psychologiczna.',
-    href: '#',
+    href: '#konsultacje',
     icon: Feather,
   },
   {
     title: 'Terapia indywidualna',
     description:
       'Zmianom w naszym zyciu prawie zawsze towarzyszy stres lub lek. Ogromnie pomocna w takich sytuacjach jest mozliwosc systematycznego korzystania ze wsparcia i doswiadczenia terapeuty. W bezpiecznej relacji terapeutycznej mozemy wspolnie przygladac sie sytuacjom problemowym, szukac nowych rozwiazan oraz uczyc sie je wdrazac w zycie.',
-    href: '#',
+    href: '#terapia-indywidualna',
     icon: Bird,
   },
 ]
@@ -86,6 +86,66 @@ export default function ServicesPage() {
               <ServiceCard key={card.title} {...card} />
             ))}
           </div>
+        </section>
+
+        <section id="konsultacje" className="mx-auto mt-14 max-w-7xl px-4 sm:mt-16 sm:px-6 lg:px-8">
+          <article className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm sm:p-8">
+            <h2 className="font-serif text-3xl text-teal-700">Konsultacje - korzysci</h2>
+            <p className="mt-4 leading-relaxed text-stone-600">
+              Konsultacja psychologiczna pomaga nazwac aktualne trudnosci i
+              uporzadkowac sytuacje zyciowa. To pierwszy krok do odzyskania
+              spokoju oraz wyznaczenia realnego planu dalszych dzialan.
+            </p>
+            <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+              <li className="flex items-start gap-2 text-stone-700">
+                <CheckCircle2 className="mt-0.5 h-5 w-5 text-orange-500" aria-hidden="true" />
+                Lepsze zrozumienie zrodla stresu, lekow i napiecia.
+              </li>
+              <li className="flex items-start gap-2 text-stone-700">
+                <CheckCircle2 className="mt-0.5 h-5 w-5 text-orange-500" aria-hidden="true" />
+                Konkretne wskazowki jak poradzic sobie z biezacym kryzysem.
+              </li>
+              <li className="flex items-start gap-2 text-stone-700">
+                <CheckCircle2 className="mt-0.5 h-5 w-5 text-orange-500" aria-hidden="true" />
+                Wsparcie w poprawie relacji i komunikacji z bliskimi.
+              </li>
+              <li className="flex items-start gap-2 text-stone-700">
+                <CheckCircle2 className="mt-0.5 h-5 w-5 text-orange-500" aria-hidden="true" />
+                Ustalenie celu i najlepszego kierunku dalszej pomocy.
+              </li>
+            </ul>
+          </article>
+        </section>
+
+        <section id="terapia-indywidualna" className="mx-auto mt-8 max-w-7xl px-4 pb-2 sm:px-6 lg:px-8">
+          <article className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm sm:p-8">
+            <h2 className="font-serif text-3xl text-teal-700">
+              Terapia indywidualna - korzysci
+            </h2>
+            <p className="mt-4 leading-relaxed text-stone-600">
+              Systematyczna terapia pozwala pracowac glebiej nad utrwalonymi
+              schematami, emocjami i relacjami. To proces, ktory wspiera trwala
+              zmiane i budowanie wiekszej sprawczosci w codziennym zyciu.
+            </p>
+            <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+              <li className="flex items-start gap-2 text-stone-700">
+                <CheckCircle2 className="mt-0.5 h-5 w-5 text-orange-500" aria-hidden="true" />
+                Rozwijanie zdrowszych sposobow radzenia sobie z emocjami.
+              </li>
+              <li className="flex items-start gap-2 text-stone-700">
+                <CheckCircle2 className="mt-0.5 h-5 w-5 text-orange-500" aria-hidden="true" />
+                Lepsze poznanie siebie, swoich potrzeb i granic.
+              </li>
+              <li className="flex items-start gap-2 text-stone-700">
+                <CheckCircle2 className="mt-0.5 h-5 w-5 text-orange-500" aria-hidden="true" />
+                Zmniejszenie intensywnosci napiecia i objawow stresowych.
+              </li>
+              <li className="flex items-start gap-2 text-stone-700">
+                <CheckCircle2 className="mt-0.5 h-5 w-5 text-orange-500" aria-hidden="true" />
+                Trwalsza poprawa dobrostanu psychicznego i relacji.
+              </li>
+            </ul>
+          </article>
         </section>
       </main>
 
