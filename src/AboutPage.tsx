@@ -33,6 +33,7 @@ const partners: Partner[] = [
   },
   {
     name: 'Nowacki Chiropraktyka NC Health Clinic',
+    subtitle: 'dr Mateusz Nowacki',
     description:
       'W trosce o zdrowie moich klientów współpracuję z doktorem Mateuszem Nowackim, który prowadzi gabinet chiropraktyki Health Clinic. Health Clinic to multidyscyplinarny zespół specjalistów i entuzjastów zdrowia - fizjoterapeutów specjalizujący się w pomocy przy bólach pleców i ramion, migrenach, a także masażach relaksacyjnych.',
     website: 'http://chiropraktyka.wroclaw.pl/',
@@ -191,7 +192,7 @@ export default function AboutPage() {
               </div>
             </section>
 
-            <aside className="order-1 space-y-6 lg:order-2">
+            <aside className="order-1 space-y-4 lg:order-2">
               <div className="mx-auto w-full max-w-[360px] overflow-hidden rounded-2xl border-2 border-teal-200 bg-white shadow-md">
                 {isProfileImageMissing ? (
                   <div className="flex aspect-[4/5] items-center justify-center">
