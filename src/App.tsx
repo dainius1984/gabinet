@@ -12,15 +12,33 @@ function ScrollToHash() {
 
   useEffect(() => {
     if (!hash) {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
+      window.scrollTo({ top: 0, behavior: 'auto' })
       return
     }
 
     const targetId = hash.slice(1)
-    const targetElement = document.getElementById(targetId)
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    let attempt = 0
+    let rafId = 0
+    const maxAttempts = 30
+
+    const scrollToTarget = () => {
+      const targetElement = document.getElementById(targetId)
+      if (!targetElement) {
+        attempt += 1
+        if (attempt < maxAttempts) {
+          rafId = window.requestAnimationFrame(scrollToTarget)
+        }
+        return
+      }
+
+      const headerHeight = document.querySelector('header')?.clientHeight ?? 0
+      const targetTop = targetElement.getBoundingClientRect().top + window.scrollY
+      const topWithOffset = Math.max(targetTop - headerHeight - 12, 0)
+      window.scrollTo({ top: topWithOffset, behavior: 'smooth' })
     }
+
+    rafId = window.requestAnimationFrame(scrollToTarget)
+    return () => window.cancelAnimationFrame(rafId)
   }, [pathname, hash])
 
   return null

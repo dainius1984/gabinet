@@ -118,7 +118,7 @@ export default function HealthZonePage() {
             <div className="mt-8 grid gap-6 lg:grid-cols-2">
               <article
                 id="artykul-relaks"
-                className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm sm:p-8"
+                className="scroll-mt-28 rounded-2xl border border-stone-200 bg-white p-6 shadow-sm sm:p-8"
               >
                 <p className="text-xs font-semibold uppercase tracking-wide text-orange-500">
                   Czas na relaks
@@ -143,11 +143,18 @@ export default function HealthZonePage() {
                   i uporzadkowac priorytety zanim napiecie przejdzie w stan
                   chroniczny.
                 </p>
+                <ul className="mt-5 space-y-2 text-sm leading-relaxed text-stone-600">
+                  <li>- Trudno Ci zasnac mimo zmeczenia.</li>
+                  <li>- Coraz czesciej reagujesz drazliwie na drobne sytuacje.</li>
+                  <li>- Masz poczucie, ze "dzialasz na autopilocie".</li>
+                  <li>- Nie odczuwasz satysfakcji z rzeczy, ktore dawniej cieszyly.</li>
+                  <li>- Odkładasz regeneracje, bo "najpierw musisz wszystko domknac".</li>
+                </ul>
               </article>
 
               <article
                 id="artykul-granice"
-                className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm sm:p-8"
+                className="scroll-mt-28 rounded-2xl border border-stone-200 bg-white p-6 shadow-sm sm:p-8"
               >
                 <p className="text-xs font-semibold uppercase tracking-wide text-orange-500">
                   Relacje i granice
@@ -171,6 +178,10 @@ export default function HealthZonePage() {
                   nie oddalaja - one porzadkuja relacje i chronia zasoby
                   psychiczne potrzebne do codziennego funkcjonowania.
                 </p>
+                <div className="mt-5 rounded-lg border border-orange-200 bg-orange-50 p-4 text-sm leading-relaxed text-stone-700">
+                  Przykladowy komunikat granicy: "Doceniam to, ze pytasz, ale nie
+                  moge podjac sie tego teraz. Wroce do tematu jutro."
+                </div>
               </article>
             </div>
           </div>
