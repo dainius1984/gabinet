@@ -1,5 +1,6 @@
+import { useState } from 'react'
 import type { LucideIcon } from 'lucide-react'
-import { Activity, Coffee, ExternalLink, Leaf } from 'lucide-react'
+import { Activity, Coffee, ExternalLink, Leaf, UserRound } from 'lucide-react'
 import BookingInline from './components/BookingInline'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -44,6 +45,8 @@ function HealthPillarCard({ title, description, icon: Icon }: HealthPillarCardPr
 }
 
 export default function HealthZonePage() {
+  const [isPartnerImageMissing, setIsPartnerImageMissing] = useState(false)
+
   return (
     <div className="min-h-screen bg-white font-sans text-stone-700">
       <Header />
@@ -218,10 +221,22 @@ export default function HealthZonePage() {
               </div>
 
               <div className="mx-auto flex w-full max-w-xs flex-col items-center">
-                <div className="flex h-80 w-64 items-center justify-center rounded-2xl border-2 border-teal-200 bg-stone-100 shadow-md">
-                  <span className="text-center text-sm text-stone-500">
-                    Miejsce na zdjecie dr. Mateusza Nowackiego
-                  </span>
+                <div className="h-80 w-64 overflow-hidden rounded-2xl border-2 border-teal-200 bg-stone-100 shadow-md">
+                  {isPartnerImageMissing ? (
+                    <div className="flex h-full w-full items-center justify-center">
+                      <UserRound className="h-14 w-14 text-stone-400" aria-hidden="true" />
+                      <span className="sr-only">
+                        Zdjecie dr. Mateusza Nowackiego
+                      </span>
+                    </div>
+                  ) : (
+                    <img
+                      src="/img/3.JFIF"
+                      alt="Dr Mateusz Nowacki"
+                      className="h-full w-full object-cover"
+                      onError={() => setIsPartnerImageMissing(true)}
+                    />
+                  )}
                 </div>
                 <p className="mt-3 text-sm font-semibold text-teal-700">
                   NC Health Clinic Logo
