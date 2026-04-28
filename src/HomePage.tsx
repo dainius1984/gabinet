@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { ArrowRight, UserRound } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import BookingInline from './components/BookingInline'
 import Footer from './components/Footer'
 import Header from './components/Header'
@@ -89,13 +90,13 @@ function ServiceCard({ title, description, href }: ServiceCardProps) {
       <div className="mb-5 h-1 w-16 rounded-full bg-orange-500" aria-hidden="true" />
       <h3 className="mb-3 font-serif text-2xl text-teal-700">{title}</h3>
       <p className="flex-1 leading-relaxed text-stone-600">{description}</p>
-      <a
-        href={href}
+      <Link
+        to={href}
         className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-teal-700 transition hover:text-orange-500"
       >
         czytaj dalej
         <ArrowRight className="h-4 w-4" aria-hidden="true" />
-      </a>
+      </Link>
     </article>
   )
 }
@@ -131,8 +132,8 @@ function HealthZoneSection() {
         </p>
 
         <div className="mx-auto mt-10 grid max-w-5xl gap-6 md:grid-cols-2">
-          <a
-            href="/strefa-zdrowia#artykul-relaks"
+          <Link
+            to="/strefa-zdrowia#artykul-relaks"
             className="rounded-xl border border-stone-200 bg-stone-50 p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
           >
             <p className="text-xs font-semibold uppercase tracking-wide text-orange-500">
@@ -145,10 +146,10 @@ function HealthZoneSection() {
               Jak rozpoznac pierwsze objawy przeciążenia i bezpiecznie wracac do
               rownowagi.
             </p>
-          </a>
+          </Link>
 
-          <a
-            href="/strefa-zdrowia#artykul-granice"
+          <Link
+            to="/strefa-zdrowia#artykul-granice"
             className="rounded-xl border border-stone-200 bg-stone-50 p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
           >
             <p className="text-xs font-semibold uppercase tracking-wide text-orange-500">
@@ -161,7 +162,7 @@ function HealthZoneSection() {
               Praktyczny sposob na stawianie granic bez poczucia winy i bez
               konfliktu.
             </p>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
