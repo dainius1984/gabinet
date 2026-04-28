@@ -49,7 +49,7 @@ function PartnerCard({
 }: PartnerCardProps) {
   return (
     <article className="flex h-full flex-col rounded-xl border border-stone-200 bg-white p-6 shadow-sm">
-      <h3 className="min-h-[3.5rem] font-serif text-xl leading-snug text-teal-700">
+      <h3 className="min-h-[3.75rem] font-serif text-xl leading-snug text-teal-700">
         {name}
       </h3>
       <div
@@ -57,11 +57,9 @@ function PartnerCard({
         aria-hidden="true"
       />
 
-      {subtitle ? (
-        <p className="mb-3 min-h-[3.2rem] text-sm font-semibold text-stone-600">
-          {subtitle}
-        </p>
-      ) : null}
+      <p className="mb-3 min-h-[3.2rem] text-sm font-semibold text-stone-600">
+        {subtitle ?? '\u00A0'}
+      </p>
 
       <p className="text-sm leading-relaxed text-stone-700">{description}</p>
 
@@ -177,7 +175,7 @@ export default function AboutPage() {
             </aside>
 
             <section className="order-1 lg:order-1 lg:col-span-2">
-              <div className="mt-8 space-y-4 text-gray-700 leading-relaxed">
+              <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
                   Z wykształcenia jestem certyfikowanym psychoterapeutą
                   Wrocławskiego Instytutu Psychoterapii oraz absolwentem Szkoły
