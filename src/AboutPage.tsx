@@ -47,6 +47,56 @@ function PartnerCard({
   phone,
   website,
 }: PartnerCardProps) {
+  const contactRows = [
+    email ? (
+      <p key="email">
+        E-mail:{' '}
+        <a
+          href={`mailto:${email}`}
+          className="font-medium text-teal-700 hover:text-orange-500"
+        >
+          {email}
+        </a>
+      </p>
+    ) : (
+      <p key="email-placeholder" aria-hidden="true">
+        &nbsp;
+      </p>
+    ),
+    phone ? (
+      <p key="phone">
+        Tel:{' '}
+        <a
+          href={`tel:${phone.replaceAll(' ', '')}`}
+          className="font-medium text-teal-700 hover:text-orange-500"
+        >
+          {phone}
+        </a>
+      </p>
+    ) : (
+      <p key="phone-placeholder" aria-hidden="true">
+        &nbsp;
+      </p>
+    ),
+    website ? (
+      <p key="website">
+        WWW:{' '}
+        <a
+          href={website}
+          target="_blank"
+          rel="noreferrer"
+          className="font-medium text-teal-700 hover:text-orange-500"
+        >
+          {website}
+        </a>
+      </p>
+    ) : (
+      <p key="website-placeholder" aria-hidden="true">
+        &nbsp;
+      </p>
+    ),
+  ]
+
   return (
     <article className="flex h-full flex-col rounded-xl border border-stone-200 bg-white p-6 shadow-sm">
       <h3 className="min-h-[3.75rem] font-serif text-xl leading-snug text-teal-700">
@@ -61,45 +111,11 @@ function PartnerCard({
         {subtitle ?? '\u00A0'}
       </p>
 
-      <p className="text-sm leading-relaxed text-stone-700">{description}</p>
+      <p className="flex-1 text-sm leading-relaxed text-stone-700">{description}</p>
 
       {(email || phone || website) && (
-        <div className="mt-4 space-y-1 text-sm text-stone-600">
-          {email ? (
-            <p>
-              E-mail:{' '}
-              <a
-                href={`mailto:${email}`}
-                className="font-medium text-teal-700 hover:text-orange-500"
-              >
-                {email}
-              </a>
-            </p>
-          ) : null}
-          {phone ? (
-            <p>
-              Tel:{' '}
-              <a
-                href={`tel:${phone.replaceAll(' ', '')}`}
-                className="font-medium text-teal-700 hover:text-orange-500"
-              >
-                {phone}
-              </a>
-            </p>
-          ) : null}
-          {website ? (
-            <p>
-              WWW:{' '}
-              <a
-                href={website}
-                target="_blank"
-                rel="noreferrer"
-                className="font-medium text-teal-700 hover:text-orange-500"
-              >
-                {website}
-              </a>
-            </p>
-          ) : null}
+        <div className="mt-4 grid min-h-[4.75rem] content-end gap-1 text-sm text-stone-600">
+          {contactRows}
         </div>
       )}
     </article>
@@ -115,8 +131,8 @@ export default function AboutPage() {
 
       <main className="bg-stone-50 py-12 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <section className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:gap-12">
-            <div>
+          <section className="grid grid-cols-1 gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:gap-12">
+            <section className="order-2 lg:order-1">
               <h1 className="font-serif text-4xl text-teal-700 sm:text-5xl">Witaj</h1>
               <p className="mt-3 text-base font-semibold text-stone-500 sm:text-lg">
                 mgr Michał Kasprzyca - psycholog, psychoterapeuta
@@ -129,53 +145,7 @@ export default function AboutPage() {
               <div className="mt-5">
                 <BookingInline compact />
               </div>
-            </div>
-
-            <div className="mx-auto w-full max-w-[360px] overflow-hidden rounded-2xl border-2 border-teal-200 bg-white shadow-md">
-              {isProfileImageMissing ? (
-                <div className="flex aspect-[4/5] items-center justify-center">
-                  <UserRound className="h-16 w-16 text-stone-400" aria-hidden="true" />
-                  <span className="sr-only">Zdjęcie profilowe psychoterapeuty</span>
-                </div>
-              ) : (
-                <img
-                  src="/img/1.jpg"
-                  alt="Michał Kasprzyca"
-                  className="aspect-[4/5] w-full scale-110 object-cover object-[38%_25%]"
-                  onError={() => setIsProfileImageMissing(true)}
-                />
-              )}
-            </div>
-          </section>
-
-          <div className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-3 lg:gap-12">
-            <aside className="order-2 space-y-6 lg:order-2">
-              <section className="rounded-xl border border-stone-200 bg-white p-6 shadow-sm">
-                <h2 className="mb-3 font-serif text-2xl text-teal-700">
-                  Moje motto
-                </h2>
-                <p className="border-l-4 border-orange-400 pl-4 leading-relaxed text-stone-700">
-                  Każdy problem, który nas spotyka może stać się okazją do
-                  rozwinięcia naszych nowych umiejętności, o które może nawet
-                  nigdy byśmy siebie nie podejrzewali, gdybyśmy nie mieli
-                  problemów.
-                </p>
-              </section>
-
-              <section className="rounded-xl border border-stone-200 bg-white p-6 shadow-sm">
-                <h2 className="mb-3 font-serif text-2xl text-teal-700">
-                  Moja misja
-                </h2>
-                <p className="leading-relaxed text-stone-700">
-                  Każdy z nas ma w sobie wszystkie zasoby potrzebne do
-                  przeżywania pełni szczęścia w życiu. Celem mojej pracy jest
-                  pomoc każdemu w odnalezieniu drogi do tych zasobów.
-                </p>
-              </section>
-            </aside>
-
-            <section className="order-1 lg:order-1 lg:col-span-2">
-              <div className="space-y-4 text-gray-700 leading-relaxed">
+              <div className="mt-10 space-y-4 text-gray-700 leading-relaxed">
                 <p>
                   Z wykształcenia jestem certyfikowanym psychoterapeutą
                   Wrocławskiego Instytutu Psychoterapii oraz absolwentem Szkoły
@@ -220,7 +190,48 @@ export default function AboutPage() {
                 </p>
               </div>
             </section>
-          </div>
+
+            <aside className="order-1 space-y-6 lg:order-2">
+              <div className="mx-auto w-full max-w-[360px] overflow-hidden rounded-2xl border-2 border-teal-200 bg-white shadow-md">
+                {isProfileImageMissing ? (
+                  <div className="flex aspect-[4/5] items-center justify-center">
+                    <UserRound className="h-16 w-16 text-stone-400" aria-hidden="true" />
+                    <span className="sr-only">Zdjęcie profilowe psychoterapeuty</span>
+                  </div>
+                ) : (
+                  <img
+                    src="/img/1.jpg"
+                    alt="Michał Kasprzyca"
+                    className="aspect-[4/5] w-full scale-110 object-cover object-[38%_25%]"
+                    onError={() => setIsProfileImageMissing(true)}
+                  />
+                )}
+              </div>
+
+              <section className="rounded-xl border border-stone-200 bg-white p-6 shadow-sm">
+                <h2 className="mb-3 font-serif text-2xl text-teal-700">
+                  Moje motto
+                </h2>
+                <p className="border-l-4 border-orange-400 pl-4 leading-relaxed text-stone-700">
+                  Każdy problem, który nas spotyka może stać się okazją do
+                  rozwinięcia naszych nowych umiejętności, o które może nawet
+                  nigdy byśmy siebie nie podejrzewali, gdybyśmy nie mieli
+                  problemów.
+                </p>
+              </section>
+
+              <section className="rounded-xl border border-stone-200 bg-white p-6 shadow-sm">
+                <h2 className="mb-3 font-serif text-2xl text-teal-700">
+                  Moja misja
+                </h2>
+                <p className="leading-relaxed text-stone-700">
+                  Każdy z nas ma w sobie wszystkie zasoby potrzebne do
+                  przeżywania pełni szczęścia w życiu. Celem mojej pracy jest
+                  pomoc każdemu w odnalezieniu drogi do tych zasobów.
+                </p>
+              </section>
+            </aside>
+          </section>
 
           <section className="mt-16 sm:mt-20">
             <h2 className="text-center font-serif text-2xl text-teal-700 sm:text-3xl">
