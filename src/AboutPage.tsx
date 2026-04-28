@@ -117,29 +117,41 @@ export default function AboutPage() {
 
       <main className="bg-stone-50 py-12 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-3 lg:gap-12">
-            <aside className="order-1 space-y-6 lg:order-2">
-              <div className="mx-auto h-64 w-64 overflow-hidden rounded-2xl border-2 border-teal-200 bg-white shadow-md sm:h-72 sm:w-72 lg:mx-0 lg:h-80 lg:w-full">
-                {isProfileImageMissing ? (
-                  <div className="flex h-full w-full items-center justify-center">
-                    <UserRound
-                      className="h-16 w-16 text-stone-400"
-                      aria-hidden="true"
-                    />
-                    <span className="sr-only">
-                      Zdjęcie profilowe psychoterapeuty
-                    </span>
-                  </div>
-                ) : (
-                  <img
-                    src="/img/1.jpg"
-                    alt="Michał Kasprzyca"
-                    className="h-full w-full scale-110 object-cover object-[38%_25%]"
-                    onError={() => setIsProfileImageMissing(true)}
-                  />
-                )}
+          <section className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:gap-12">
+            <div>
+              <h1 className="font-serif text-4xl text-teal-700 sm:text-5xl">Witaj</h1>
+              <p className="mt-3 text-base font-semibold text-stone-500 sm:text-lg">
+                mgr Michał Kasprzyca - psycholog, psychoterapeuta
+              </p>
+              <p className="mt-4 max-w-2xl leading-relaxed text-stone-600">
+                Od lat wspieram osoby dorosle w odzyskiwaniu rownowagi psychicznej,
+                lepszym rozumieniu siebie oraz budowaniu trwalych zmian w codziennym
+                zyciu.
+              </p>
+              <div className="mt-5">
+                <BookingInline compact />
               </div>
+            </div>
 
+            <div className="mx-auto w-full max-w-[360px] overflow-hidden rounded-2xl border-2 border-teal-200 bg-white shadow-md">
+              {isProfileImageMissing ? (
+                <div className="flex aspect-[4/5] items-center justify-center">
+                  <UserRound className="h-16 w-16 text-stone-400" aria-hidden="true" />
+                  <span className="sr-only">Zdjęcie profilowe psychoterapeuty</span>
+                </div>
+              ) : (
+                <img
+                  src="/img/1.jpg"
+                  alt="Michał Kasprzyca"
+                  className="aspect-[4/5] w-full scale-110 object-cover object-[38%_25%]"
+                  onError={() => setIsProfileImageMissing(true)}
+                />
+              )}
+            </div>
+          </section>
+
+          <div className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-3 lg:gap-12">
+            <aside className="order-2 space-y-6 lg:order-2">
               <section className="rounded-xl border border-stone-200 bg-white p-6 shadow-sm">
                 <h2 className="mb-3 font-serif text-2xl text-teal-700">
                   Moje motto
@@ -164,17 +176,7 @@ export default function AboutPage() {
               </section>
             </aside>
 
-            <section className="order-2 lg:order-1 lg:col-span-2">
-              <h1 className="font-serif text-4xl text-teal-700 sm:text-5xl">
-                Witaj
-              </h1>
-              <p className="mt-3 text-base font-semibold text-stone-500 sm:text-lg">
-                mgr Michał Kasprzyca - psycholog, psychoterapeuta
-              </p>
-              <div className="mt-5">
-                <BookingInline compact />
-              </div>
-
+            <section className="order-1 lg:order-1 lg:col-span-2">
               <div className="mt-8 space-y-4 text-gray-700 leading-relaxed">
                 <p>
                   Z wykształcenia jestem certyfikowanym psychoterapeutą
