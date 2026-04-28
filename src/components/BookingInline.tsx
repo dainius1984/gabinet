@@ -18,7 +18,7 @@ export default function BookingInline({
         href={BOOKING_URL}
         target="_blank"
         rel="noreferrer"
-        className={`inline-flex items-center gap-2 rounded-lg border border-green-700 bg-green-600 font-semibold text-white shadow-sm transition hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-700 ${
+        className={`inline-flex items-center gap-2 rounded-full border border-teal-200 bg-white font-semibold text-teal-700 shadow-sm transition hover:border-orange-300 hover:text-orange-600 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700 ${
           compact ? 'px-4 py-2 text-sm' : 'px-6 py-3 text-base'
         }`}
         aria-label="Umow wizyte przez ZnanyLekarz (otworzy sie w nowej karcie)"

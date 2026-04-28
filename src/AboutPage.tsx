@@ -48,15 +48,19 @@ function PartnerCard({
   website,
 }: PartnerCardProps) {
   return (
-    <article className="rounded-xl border border-stone-200 bg-white p-6 shadow-sm">
-      <h3 className="font-serif text-xl text-teal-700">{name}</h3>
+    <article className="flex h-full flex-col rounded-xl border border-stone-200 bg-white p-6 shadow-sm">
+      <h3 className="min-h-[3.5rem] font-serif text-xl leading-snug text-teal-700">
+        {name}
+      </h3>
       <div
         className="my-3 w-20 border-b-2 border-dotted border-orange-300"
         aria-hidden="true"
       />
 
       {subtitle ? (
-        <p className="mb-3 text-sm font-semibold text-stone-600">{subtitle}</p>
+        <p className="mb-3 min-h-[3.2rem] text-sm font-semibold text-stone-600">
+          {subtitle}
+        </p>
       ) : null}
 
       <p className="text-sm leading-relaxed text-stone-700">{description}</p>
@@ -223,7 +227,7 @@ export default function AboutPage() {
               - Współpracuję z -
             </h2>
 
-            <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
+            <div className="mt-8 grid grid-cols-1 items-stretch gap-6 md:grid-cols-3">
               {partners.map((partner) => (
                 <PartnerCard key={partner.name} {...partner} />
               ))}
