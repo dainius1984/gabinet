@@ -17,7 +17,7 @@ interface PartnerCardProps extends Partner {}
 
 const partners: Partner[] = [
   {
-    name: 'Roman Ciesielski',
+    name: 'Roman Ciesielskiii',
     subtitle: 'Dr. n. med. specjalista psychiatra dzieci i młodzieży',
     description:
       'Certyfikowany psychoterapeuta. Kieruje wrocławskim Instytutem Psychoterapii. Pełni funkcje ordynatora Oddziału Dziennego Psychiatrii dla Dzieci i Młodzieży we Wrocławiu.',
