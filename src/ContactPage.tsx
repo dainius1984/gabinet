@@ -54,7 +54,7 @@ export default function ContactPage() {
                   rel="noreferrer"
                   className="mt-2 inline-block text-stone-700 transition hover:text-orange-500"
                 >
-                  Zygmunta Krasińskiego 1, Wrocław
+                  Zygmunta Krasińskiego 1, pokój 503, Wrocław
                 </a>
               </article>
             </div>
@@ -111,7 +111,7 @@ export default function ContactPage() {
           <div className="mx-auto grid max-w-6xl grid-cols-1 gap-4 px-4 text-white sm:px-6 md:grid-cols-3 lg:px-8">
             <div className="flex items-center gap-2">
               <MapPin className="h-5 w-5" aria-hidden="true" />
-              <span>Zygmunta Krasińskiego 1, Wrocław</span>
+              <span>Zygmunta Krasińskiego 1, pokój 503, Wrocław</span>
             </div>
             <a
               href="tel:+48507084352"
@@ -132,7 +132,7 @@ export default function ContactPage() {
 
       </main>
 
-      <Footer />
+      <Footer showMap={false} />
     </div>
   )
 }
