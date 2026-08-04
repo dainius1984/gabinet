@@ -38,15 +38,6 @@ export default function Footer() {
             >
               Otwórz w Google Maps
             </a>
-
-            <blockquote className="mt-6 border-l-4 border-orange-200 pl-4">
-              <p className="font-serif text-xl leading-snug text-teal-700">
-                Życie daje każdemu tyle, ile sam ma odwagę sobie z niego wziąć.
-              </p>
-              <footer className="mt-2 text-xs uppercase tracking-[0.16em] text-stone-500">
-                — Jacek Walkiewicz
-              </footer>
-            </blockquote>
           </div>
 
           <nav aria-label="Nawigacja w stopce">
