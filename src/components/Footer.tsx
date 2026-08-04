@@ -24,11 +24,7 @@ export default function Footer({ showMap = true }: FooterProps) {
   return (
     <footer id="contact" className="border-t border-stone-200 bg-stone-50">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
-        <div
-          className={`grid gap-10 lg:gap-12 ${
-            showMap ? 'lg:grid-cols-[minmax(0,20rem)_1fr] lg:items-start' : 'lg:grid-cols-3'
-          }`}
-        >
+        <div className="grid gap-10 lg:grid-cols-3 lg:gap-12">
           <div>
             {showMap && (
               <div className="relative mb-4 aspect-square overflow-hidden rounded-2xl border border-stone-200 bg-stone-200 shadow-sm">
@@ -61,25 +57,23 @@ export default function Footer({ showMap = true }: FooterProps) {
             </a>
           </div>
 
-          {!showMap && (
-            <nav aria-label="Nawigacja w stopce">
-              <h2 className="text-xs font-semibold uppercase tracking-[0.14em] text-stone-500">
-                Nawigacja
-              </h2>
-              <ul className="mt-3 space-y-2 text-sm">
-                {footerNav.map((item) => (
-                  <li key={item.href}>
-                    <Link
-                      to={item.href}
-                      className="text-stone-600 transition hover:text-orange-500"
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          )}
+          <nav aria-label="Nawigacja w stopce">
+            <h2 className="text-xs font-semibold uppercase tracking-[0.14em] text-stone-500">
+              Nawigacja
+            </h2>
+            <ul className="mt-3 space-y-2 text-sm">
+              {footerNav.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    to={item.href}
+                    className="text-stone-600 transition hover:text-orange-500"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
           <div>
             <h2 className="text-xs font-semibold uppercase tracking-[0.14em] text-stone-500">
