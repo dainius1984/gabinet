@@ -16,7 +16,7 @@ export default function Footer({ showMap = true }: FooterProps) {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
         <div
           className={`grid gap-10 lg:gap-12 ${
-            showMap ? 'lg:grid-cols-[1.4fr_1fr] lg:items-start' : ''
+            showMap ? 'lg:grid-cols-[1.4fr_1fr] lg:items-stretch' : ''
           }`}
         >
           {showMap && (
@@ -31,9 +31,14 @@ export default function Footer({ showMap = true }: FooterProps) {
             </div>
           )}
 
-          <div className="space-y-8">
-            <div>
-              <h2 className="text-xs font-semibold uppercase tracking-[0.14em] text-stone-500">
+          <div
+            className={`flex flex-col rounded-2xl border border-stone-200 bg-white p-6 shadow-sm sm:p-8 ${
+              showMap ? 'justify-center gap-6 divide-y divide-stone-100' : 'gap-6 sm:flex-row sm:gap-10'
+            }`}
+          >
+            <div className={showMap ? '' : 'sm:flex-1'}>
+              <h2 className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-stone-500">
+                <Phone className="h-3.5 w-3.5 text-orange-500" aria-hidden="true" />
                 Kontakt
               </h2>
               <ul className="mt-3 space-y-2 text-sm text-stone-600">
@@ -58,16 +63,13 @@ export default function Footer({ showMap = true }: FooterProps) {
               </ul>
             </div>
 
-            <div>
-              <p className="font-medium text-teal-700">Gabinet psychoterapeutyczny</p>
-              <address className="mt-3 space-y-2 text-sm not-italic text-stone-600">
-                <p className="flex items-start gap-2">
-                  <MapPin
-                    className="mt-0.5 h-4 w-4 shrink-0 text-orange-500"
-                    aria-hidden="true"
-                  />
-                  <span>ul. Zygmunta Krasińskiego 1, pokój 503, 50-256 Wrocław</span>
-                </p>
+            <div className={showMap ? 'pt-6' : 'sm:flex-1'}>
+              <h2 className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-stone-500">
+                <MapPin className="h-3.5 w-3.5 text-orange-500" aria-hidden="true" />
+                Gabinet psychoterapeutyczny
+              </h2>
+              <address className="mt-3 text-sm not-italic text-stone-600">
+                ul. Zygmunta Krasińskiego 1, pokój 503, 50-256 Wrocław
               </address>
               <a
                 href={GOOGLE_MAPS_LOCATION_URL}
