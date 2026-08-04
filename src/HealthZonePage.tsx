@@ -13,6 +13,17 @@ interface HealthPillar {
 
 interface HealthPillarCardProps extends HealthPillar {}
 
+interface Partner {
+  name: string
+  subtitle?: string
+  description: string
+  email?: string
+  phone?: string
+  website?: string
+}
+
+interface PartnerCardProps extends Partner {}
+
 const PARTNER_URL = 'http://chiropraktyka.wroclaw.pl/'
 const healthPillars: HealthPillar[] = [
   {
@@ -32,6 +43,31 @@ const healthPillars: HealthPillar[] = [
   },
 ]
 
+const partners: Partner[] = [
+  {
+    name: 'Roman Ciesielskiii',
+    subtitle: 'Dr. n. med. specjalista psychiatra dzieci i młodzieży',
+    description:
+      'Certyfikowany psychoterapeuta. Kieruje wrocławskim Instytutem Psychoterapii. Pełni funkcje ordynatora Oddziału Dziennego Psychiatrii dla Dzieci i Młodzieży we Wrocławiu.',
+    email: 'infodpi@wroclaw.pl',
+    phone: '512 219 845',
+  },
+  {
+    name: 'Anna Maroń',
+    subtitle: 'Dr. n. med. specjalista pediatra',
+    description:
+      'Klinika Pediatrii, Alergologii i Kardiologii - Samodzielny Publiczny Szpital Kliniczny Nr 1 we Wrocławiu. Chałubińskiego 2, 50-368, Wrocław.',
+    phone: '604 062 900',
+  },
+  {
+    name: 'Nowacki Chiropraktyka NC Health Clinic',
+    subtitle: 'dr Mateusz Nowacki',
+    description:
+      'W trosce o zdrowie moich klientów współpracuję z doktorem Mateuszem Nowackim, który prowadzi gabinet chiropraktyki Health Clinic. Health Clinic to multidyscyplinarny zespół specjalistów i entuzjastów zdrowia - fizjoterapeutów specjalizujący się w pomocy przy bólach pleców i ramion, migrenach, a także masażach relaksacyjnych.',
+    website: 'http://chiropraktyka.wroclaw.pl/',
+  },
+]
+
 function HealthPillarCard({ title, description, icon: Icon }: HealthPillarCardProps) {
   return (
     <article className="rounded-xl border border-stone-200 bg-white p-6 shadow-sm sm:p-7">
@@ -40,6 +76,89 @@ function HealthPillarCard({ title, description, icon: Icon }: HealthPillarCardPr
       </div>
       <h3 className="mt-4 font-serif text-xl text-teal-700">{title}</h3>
       <p className="mt-2 leading-relaxed text-stone-600">{description}</p>
+    </article>
+  )
+}
+
+function PartnerCard({
+  name,
+  subtitle,
+  description,
+  email,
+  phone,
+  website,
+}: PartnerCardProps) {
+  const contactRows = [
+    email ? (
+      <p key="email">
+        E-mail:{' '}
+        <a
+          href={`mailto:${email}`}
+          className="font-medium text-teal-700 hover:text-orange-500"
+        >
+          {email}
+        </a>
+      </p>
+    ) : (
+      <p key="email-placeholder" aria-hidden="true">
+        &nbsp;
+      </p>
+    ),
+    phone ? (
+      <p key="phone">
+        Tel:{' '}
+        <a
+          href={`tel:${phone.replaceAll(' ', '')}`}
+          className="font-medium text-teal-700 hover:text-orange-500"
+        >
+          {phone}
+        </a>
+      </p>
+    ) : (
+      <p key="phone-placeholder" aria-hidden="true">
+        &nbsp;
+      </p>
+    ),
+    website ? (
+      <p key="website">
+        WWW:{' '}
+        <a
+          href={website}
+          target="_blank"
+          rel="noreferrer"
+          className="font-medium text-teal-700 hover:text-orange-500"
+        >
+          {website}
+        </a>
+      </p>
+    ) : (
+      <p key="website-placeholder" aria-hidden="true">
+        &nbsp;
+      </p>
+    ),
+  ]
+
+  return (
+    <article className="flex h-full flex-col rounded-xl border border-stone-200 bg-white p-6 shadow-sm">
+      <h3 className="min-h-[3.75rem] font-serif text-xl leading-snug text-teal-700">
+        {name}
+      </h3>
+      <div
+        className="my-3 w-20 border-b-2 border-dotted border-orange-300"
+        aria-hidden="true"
+      />
+
+      <p className="mb-3 min-h-[3.2rem] text-sm font-semibold text-stone-600">
+        {subtitle ?? ' '}
+      </p>
+
+      <p className="flex-1 text-sm leading-relaxed text-stone-700">{description}</p>
+
+      {(email || phone || website) && (
+        <div className="mt-4 grid min-h-[4.75rem] content-end gap-1 text-sm text-stone-600">
+          {contactRows}
+        </div>
+      )}
     </article>
   )
 }
@@ -221,25 +340,23 @@ export default function HealthZonePage() {
               </div>
 
               <div className="mx-auto flex w-full max-w-xs flex-col items-center">
-                <div className="h-80 w-64 overflow-hidden rounded-2xl border-2 border-teal-200 bg-stone-100 shadow-md">
+                <div className="flex h-56 w-64 items-center justify-center overflow-hidden rounded-2xl border-2 border-teal-200 bg-white p-6 shadow-md">
                   {isPartnerImageMissing ? (
                     <div className="flex h-full w-full items-center justify-center">
                       <UserRound className="h-14 w-14 text-stone-400" aria-hidden="true" />
-                      <span className="sr-only">
-                        Zdjęcie dr. Mateusza Nowackiego
-                      </span>
+                      <span className="sr-only">Logo NC Health Clinic</span>
                     </div>
                   ) : (
                     <img
-                      src="/img/3.JFIF"
-                      alt="Dr Mateusz Nowacki"
-                      className="h-full w-full object-cover"
+                      src="/img/4.jpg"
+                      alt="NC Health Clinic - logo"
+                      className="h-full w-full object-contain"
                       onError={() => setIsPartnerImageMissing(true)}
                     />
                   )}
                 </div>
                 <p className="mt-3 text-sm font-semibold text-teal-700">
-                  NC Health Clinic Logo
+                  NC Health Clinic
                 </p>
               </div>
             </article>
@@ -255,6 +372,20 @@ export default function HealthZonePage() {
             <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
               {healthPillars.map((pillar) => (
                 <HealthPillarCard key={pillar.title} {...pillar} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-stone-50 py-14 sm:py-16">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-center font-serif text-2xl text-teal-700 sm:text-3xl">
+              - Współpracuję z -
+            </h2>
+
+            <div className="mt-8 grid grid-cols-1 items-stretch gap-6 md:grid-cols-3">
+              {partners.map((partner) => (
+                <PartnerCard key={partner.name} {...partner} />
               ))}
             </div>
           </div>
