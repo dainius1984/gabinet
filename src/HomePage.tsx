@@ -17,13 +17,13 @@ const services: Service[] = [
   {
     title: 'Konsultacje psychologiczne',
     description:
-      'Jesli doswiadczasz problemow w relacjach z innymi, masz trudnosci wychowawcze ze swoimi dziecmi, doswiadczasz powracajacych obaw i lekow, zamartwiasz sie czyms lub po prostu chcesz w swoim zyciu cos zmienic na lepsze i potrzebujesz wsparcia, serdecznie zapraszam Cie na konsultacje psychologiczna. Podczas spotkania spokojnie przyjrzymy sie Twojej sytuacji i wspolnie wybierzemy najlepsza forme pomocy.',
+      'Jeśli doświadczasz problemów w relacjach z innymi, masz trudności wychowawcze ze swoimi dziećmi, doświadczasz powracających obaw i lęków, zamartwiasz się czymś lub po prostu chcesz w swoim życiu coś zmienić na lepsze i potrzebujesz wsparcia, serdecznie zapraszam Cię na konsultację psychologiczną. Podczas spotkania spokojnie przyjrzymy się Twojej sytuacji i wspólnie wybierzemy najlepszą formę pomocy.',
     href: '/uslugi#konsultacje',
   },
   {
-    title: 'Terapia indywidualna osob doroslych',
+    title: 'Terapia indywidualna osób dorosłych',
     description:
-      'Zmianom w naszym zyciu prawie zawsze towarzyszy stres lub lek. Ogromnie pomocna w takich sytuacjach jest mozliwosc systematycznego korzystania ze wsparcia i doswiadczenia terapeuty. W bezpiecznej relacji terapeutycznej mozemy wspolnie przygladac sie sytuacjom problemowym, rozumiec ich zrodla oraz wdrazac zmiany, ktore przywroca poczucie sprawczosci i wewnetrznej rownowagi.',
+      'Zmianom w naszym życiu prawie zawsze towarzyszy stres lub lęk. Ogromnie pomocna w takich sytuacjach jest możliwość systematycznego korzystania ze wsparcia i doświadczenia terapeuty. W bezpiecznej relacji terapeutycznej możemy wspólnie przyglądać się sytuacjom problemowym, rozumieć ich źródła oraz wdrażać zmiany, które przywrócą poczucie sprawczości i wewnętrznej równowagi.',
     href: '/uslugi#terapia-indywidualna',
   },
 ]
@@ -38,15 +38,15 @@ function Hero() {
           <div className="order-2 lg:order-1">
             <div className="space-y-6 rounded-3xl border border-stone-200 bg-white p-6 shadow-sm sm:p-8">
               <p className="font-serif text-3xl leading-tight text-teal-700 sm:text-4xl lg:text-5xl">
-                ZYCIE DAJE KAZDEMU TYLE, ILE SAM MA ODWAGE SOBIE Z NIEGO WZIAC
+                ŻYCIE DAJE KAŻDEMU TYLE, ILE SAM MA ODWAGĘ SOBIE Z NIEGO WZIĄĆ
               </p>
               <p className="text-sm uppercase tracking-[0.18em] text-stone-500">
                 - Jacek Walkiewicz
               </p>
 
               <p className="max-w-xl leading-relaxed text-stone-600">
-                Profesjonalne wsparcie psychologiczne i psychoterapia osob
-                doroslych w spokojnej, bezpiecznej atmosferze.
+                Profesjonalne wsparcie psychologiczne i psychoterapia osób
+                dorosłych w spokojnej, bezpiecznej atmosferze.
               </p>
 
               <div className="flex flex-wrap items-center gap-3">
@@ -63,19 +63,19 @@ function Hero() {
               {isProfileImageMissing ? (
                 <div className="flex aspect-[4/5] items-center justify-center">
                   <UserRound className="h-16 w-16 text-stone-400" aria-hidden="true" />
-                  <span className="sr-only">Zdjecie profilowe psychoterapeuty</span>
+                  <span className="sr-only">Zdjęcie profilowe psychoterapeuty</span>
                 </div>
               ) : (
                 <img
                   src="/img/1.jpg"
-                  alt="Michal Kasprzyca"
+                  alt="Michał Kasprzyca"
                   className="aspect-[4/5] w-full scale-110 object-cover object-[38%_25%] transition duration-500 group-hover:scale-[1.13]"
                   onError={() => setIsProfileImageMissing(true)}
                 />
               )}
             </div>
             <p className="mt-3 text-center text-sm text-stone-500">
-              mgr Michal Kasprzyca - psycholog, psychoterapeuta
+              mgr Michał Kasprzyca - psycholog, psychoterapeuta
             </p>
           </div>
         </div>
@@ -106,7 +106,7 @@ function ServicesSection() {
     <section id="services" className="bg-white py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-center font-serif text-3xl text-teal-700 sm:text-4xl">
-          Uslugi
+          Usługi
         </h2>
 
         <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -127,8 +127,8 @@ function HealthZoneSection() {
           Strefa zdrowia
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-center leading-relaxed text-stone-600">
-          Wkrotce znajdziesz tutaj materialy psychoedukacyjne i wskazowki
-          wspierajace codzienny dobrostan psychiczny.
+          Wkrótce znajdziesz tutaj materiały psychoedukacyjne i wskazówki
+          wspierające codzienny dobrostan psychiczny.
         </p>
 
         <div className="mx-auto mt-10 grid max-w-5xl gap-6 md:grid-cols-2">
@@ -137,14 +137,14 @@ function HealthZoneSection() {
             className="rounded-xl border border-stone-200 bg-stone-50 p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
           >
             <p className="text-xs font-semibold uppercase tracking-wide text-orange-500">
-              Artykul
+              Artykuł
             </p>
             <h3 className="mt-2 font-serif text-2xl text-teal-700">
-              5 sygnalow, ze potrzebujesz zatrzymania
+              5 sygnałów, że potrzebujesz zatrzymania
             </h3>
             <p className="mt-3 leading-relaxed text-stone-600">
-              Jak rozpoznac pierwsze objawy przeciążenia i bezpiecznie wracac do
-              rownowagi.
+              Jak rozpoznać pierwsze objawy przeciążenia i bezpiecznie wracać do
+              równowagi.
             </p>
           </Link>
 
@@ -153,13 +153,13 @@ function HealthZoneSection() {
             className="rounded-xl border border-stone-200 bg-stone-50 p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
           >
             <p className="text-xs font-semibold uppercase tracking-wide text-orange-500">
-              Artykul
+              Artykuł
             </p>
             <h3 className="mt-2 font-serif text-2xl text-teal-700">
-              Granice psychiczne w codziennym zyciu
+              Granice psychiczne w codziennym życiu
             </h3>
             <p className="mt-3 leading-relaxed text-stone-600">
-              Praktyczny sposob na stawianie granic bez poczucia winy i bez
+              Praktyczny sposób na stawianie granic bez poczucia winy i bez
               konfliktu.
             </p>
           </Link>

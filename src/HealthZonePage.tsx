@@ -17,17 +17,17 @@ const PARTNER_URL = 'http://chiropraktyka.wroclaw.pl/'
 const healthPillars: HealthPillar[] = [
   {
     title: 'Dieta',
-    description: 'Zdrowa dieta jako paliwo dla mozgu.',
+    description: 'Zdrowa dieta jako paliwo dla mózgu.',
     icon: Leaf,
   },
   {
     title: 'Ruch',
-    description: 'Gimnastyka i cykliczne masaze.',
+    description: 'Gimnastyka i cykliczne masaże.',
     icon: Activity,
   },
   {
     title: 'Odpoczynek',
-    description: 'Swiadomy relaks jako profilaktyka antystresowa.',
+    description: 'Świadomy relaks jako profilaktyka antystresowa.',
     icon: Coffee,
   },
 ]
@@ -58,7 +58,7 @@ export default function HealthZonePage() {
               W zdrowym ciele zdrowy duch
             </h1>
             <p className="mt-4 text-base leading-relaxed text-stone-600 sm:text-lg">
-              O holistycznym podejsciu do zdrowia psychicznego i fizycznego
+              O holistycznym podejściu do zdrowia psychicznego i fizycznego
             </p>
             <div className="mt-6 flex justify-center">
               <BookingInline compact />
@@ -70,28 +70,28 @@ export default function HealthZonePage() {
           <article className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="space-y-6">
               <p className="text-lg leading-relaxed text-stone-700 sm:text-xl">
-                Zyjemy w bardzo wymagajacym swiecie, w ktorym latwo zapomniec o
-                rownowadze miedzy psychika a cialem. Tempo codziennosci, nadmiar
-                obowiazkow i stale napiecie sprawiaja, ze sygnaly zmeczenia
-                ignorujemy zbyt dlugo. Tymczasem dbanie o kondycje psychiczna i
-                fizyczna jest jedna z najwazniejszych inwestycji w jakosc zycia.
+                Żyjemy w bardzo wymagającym świecie, w którym łatwo zapomnieć o
+                równowadze między psychiką a ciałem. Tempo codzienności, nadmiar
+                obowiązków i stałe napięcie sprawiają, że sygnały zmęczenia
+                ignorujemy zbyt długo. Tymczasem dbanie o kondycję psychiczną i
+                fizyczną jest jedną z najważniejszych inwestycji w jakość życia.
               </p>
 
               <p className="leading-relaxed text-stone-600">
-                Holistyczne podejscie do zdrowia zaklada, ze emocje, mysli, cialo
-                i styl zycia sa ze soba scisle powiazane. Kiedy przez dluzszy czas
-                doswiadczamy stresu, moze on objawiac sie nie tylko spadkiem
-                nastroju, ale rowniez bezsennoscia, napieciem miesniowym,
-                przemeczeniem czy trudnosciami z koncentracja. Dlatego wartosc
-                profilaktyki budujemy codziennymi, malymi krokami.
+                Holistyczne podejście do zdrowia zakłada, że emocje, myśli, ciało
+                i styl życia są ze sobą ściśle powiązane. Kiedy przez dłuższy czas
+                doświadczamy stresu, może on objawiać się nie tylko spadkiem
+                nastroju, ale również bezsennością, napięciem mięśniowym,
+                przemęczeniem czy trudnościami z koncentracją. Dlatego wartość
+                profilaktyki budujemy codziennymi, małymi krokami.
               </p>
 
               <p className="leading-relaxed text-stone-600">
-                Wsparcie psychoterapeutyczne pomaga lepiej rozumiec swoje
-                potrzeby, regulowac emocje i wracac do kontaktu ze soba.
-                Rownolegle warto zadbac o podstawy dobrostanu: regularny ruch,
-                zbilansowana diete, regeneracje i odpoczynek. To razem tworzy
-                fundament trwalej odporności psychicznej.
+                Wsparcie psychoterapeutyczne pomaga lepiej rozumieć swoje
+                potrzeby, regulować emocje i wracać do kontaktu ze sobą.
+                Równolegle warto zadbać o podstawy dobrostanu: regularny ruch,
+                zbilansowaną dietę, regenerację i odpoczynek. To razem tworzy
+                fundament trwałej odporności psychicznej.
               </p>
             </div>
 
@@ -101,12 +101,12 @@ export default function HealthZonePage() {
                 <h2 className="font-serif text-2xl text-teal-700">Czas na relaks</h2>
               </div>
               <p className="mt-4 leading-relaxed text-stone-700">
-                Nasze cele zyciowe i rozwoj sa ogromnie wazne, ale nie mniej
-                istotne jest tworzenie przestrzeni na odpoczynek. Swiadomy relaks
-                obniza poziom napiecia, poprawia koncentracje i wspiera uklad
-                nerwowy. Kilkanascie minut dziennie przeznaczonych na oddech,
-                spacer lub wyciszenie moze stanowic realna profilaktyke
-                antystresowa i pomagac odzyskac poczucie wewnetrznej rownowagi.
+                Nasze cele życiowe i rozwój są ogromnie ważne, ale nie mniej
+                istotne jest tworzenie przestrzeni na odpoczynek. Świadomy relaks
+                obniża poziom napięcia, poprawia koncentrację i wspiera układ
+                nerwowy. Kilkanaście minut dziennie przeznaczonych na oddech,
+                spacer lub wyciszenie może stanowić realną profilaktykę
+                antystresową i pomagać odzyskać poczucie wewnętrznej równowagi.
               </p>
             </div>
           </article>
@@ -115,7 +115,7 @@ export default function HealthZonePage() {
         <section className="bg-stone-50 py-14 sm:py-16">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <h2 className="text-center font-serif text-3xl text-teal-700 sm:text-4xl">
-              Artykuly
+              Artykuły
             </h2>
 
             <div className="mt-8 grid gap-6 lg:grid-cols-2">
@@ -127,31 +127,31 @@ export default function HealthZonePage() {
                   Czas na relaks
                 </p>
                 <h3 className="mt-2 font-serif text-2xl text-teal-700">
-                  5 sygnalow, ze potrzebujesz zatrzymania
+                  5 sygnałów, że potrzebujesz zatrzymania
                 </h3>
                 <p className="mt-4 leading-relaxed text-stone-600">
-                  Przeciazenie psychiczne czesto rozwija sie stopniowo. Najpierw
-                  pojawia sie stale zmeczenie, trudnosci ze snem i spadek
-                  koncentracji. Nastepnie rosnie drazliwosc, a codzienne zadania
-                  zaczynaja kosztowac znacznie wiecej energii niz zwykle.
+                  Przeciążenie psychiczne często rozwija się stopniowo. Najpierw
+                  pojawia się stałe zmęczenie, trudności ze snem i spadek
+                  koncentracji. Następnie rośnie drażliwość, a codzienne zadania
+                  zaczynają kosztować znacznie więcej energii niż zwykle.
                 </p>
                 <p className="mt-3 leading-relaxed text-stone-600">
-                  Dobrze dzialaja male rytualy regeneracyjne: regularne przerwy,
-                  spacer bez telefonu, spokojny oddech i ograniczenie bodzcow
-                  wieczorem. Taki plan nie musi byc idealny - wazne, aby byl
+                  Dobrze działają małe rytuały regeneracyjne: regularne przerwy,
+                  spacer bez telefonu, spokojny oddech i ograniczenie bodźców
+                  wieczorem. Taki plan nie musi być idealny – ważne, aby był
                   powtarzalny i realny.
                 </p>
                 <p className="mt-3 leading-relaxed text-stone-600">
-                  Jesli objawy utrzymuja sie dlugo, warto skorzystac z konsultacji
-                  i uporzadkowac priorytety zanim napiecie przejdzie w stan
+                  Jeśli objawy utrzymują się długo, warto skorzystać z konsultacji
+                  i uporządkować priorytety, zanim napięcie przejdzie w stan
                   chroniczny.
                 </p>
                 <ul className="mt-5 space-y-2 text-sm leading-relaxed text-stone-600">
-                  <li>- Trudno Ci zasnac mimo zmeczenia.</li>
-                  <li>- Coraz czesciej reagujesz drazliwie na drobne sytuacje.</li>
-                  <li>- Masz poczucie, ze "dzialasz na autopilocie".</li>
-                  <li>- Nie odczuwasz satysfakcji z rzeczy, ktore dawniej cieszyly.</li>
-                  <li>- Odkładasz regeneracje, bo "najpierw musisz wszystko domknac".</li>
+                  <li>- Trudno Ci zasnąć mimo zmęczenia.</li>
+                  <li>- Coraz częściej reagujesz drażliwie na drobne sytuacje.</li>
+                  <li>- Masz poczucie, że „działasz na autopilocie”.</li>
+                  <li>- Nie odczuwasz satysfakcji z rzeczy, które dawniej cieszyły.</li>
+                  <li>- Odkładasz regenerację, bo „najpierw musisz wszystko domknąć”.</li>
                 </ul>
               </article>
 
@@ -163,27 +163,27 @@ export default function HealthZonePage() {
                   Relacje i granice
                 </p>
                 <h3 className="mt-2 font-serif text-2xl text-teal-700">
-                  Granice psychiczne w codziennym zyciu
+                  Granice psychiczne w codziennym życiu
                 </h3>
                 <p className="mt-4 leading-relaxed text-stone-600">
                   Stawianie granic nie oznacza dystansu wobec ludzi. Oznacza
-                  jasne komunikowanie, na co sie zgadzasz, a na co nie - z
+                  jasne komunikowanie, na co się zgadzasz, a na co nie – z
                   szacunkiem dla siebie i innych. To podstawa zdrowych relacji.
                 </p>
                 <p className="mt-3 leading-relaxed text-stone-600">
-                  Dobre granice sa konkretne: "Potrzebuje czasu do jutra",
-                  "Nie moge teraz rozmawiac", "Taki sposob rozmowy mi nie sluzy".
-                  Krotkie, spokojne komunikaty zmniejszaja napiecie i pomagaja
-                  unikac nieporozumien.
+                  Dobre granice są konkretne: „Potrzebuję czasu do jutra”,
+                  „Nie mogę teraz rozmawiać”, „Taki sposób rozmowy mi nie służy”.
+                  Krótkie, spokojne komunikaty zmniejszają napięcie i pomagają
+                  unikać nieporozumień.
                 </p>
                 <p className="mt-3 leading-relaxed text-stone-600">
-                  Jesli pojawia sie poczucie winy, warto pamietac, ze granice
-                  nie oddalaja - one porzadkuja relacje i chronia zasoby
+                  Jeśli pojawia się poczucie winy, warto pamiętać, że granice
+                  nie oddalają – one porządkują relacje i chronią zasoby
                   psychiczne potrzebne do codziennego funkcjonowania.
                 </p>
                 <div className="mt-5 rounded-lg border border-orange-200 bg-orange-50 p-4 text-sm leading-relaxed text-stone-700">
-                  Przykladowy komunikat granicy: "Doceniam to, ze pytasz, ale nie
-                  moge podjac sie tego teraz. Wroce do tematu jutro."
+                  Przykładowy komunikat granicy: „Doceniam to, że pytasz, ale nie
+                  mogę podjąć się tego teraz. Wrócę do tematu jutro.”
                 </div>
               </article>
             </div>
@@ -193,7 +193,7 @@ export default function HealthZonePage() {
         <section className="bg-stone-50 py-14 sm:py-16">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <h2 className="text-center font-serif text-3xl text-teal-700 sm:text-4xl">
-              Partner dla zdrowia ciala
+              Partner dla zdrowia ciała
             </h2>
 
             <article className="mt-8 grid grid-cols-1 items-center gap-8 rounded-2xl border border-stone-200 bg-white p-6 shadow-sm sm:p-8 lg:grid-cols-2">
@@ -202,11 +202,11 @@ export default function HealthZonePage() {
                   Nowacki Chiropraktyka NC Health Clinic
                 </h3>
                 <p className="mt-4 leading-relaxed text-stone-600">
-                  W trosce o zdrowie moich klientow wspolpracuje z doktorem
-                  Mateuszem Nowackim, ktory prowadzi gabinet chiropraktyki Health
-                  Clinic. Health Clinic to multidyscyplinarny zespol specjalistow
-                  i entuzjastow zdrowia - fizjoterapeutow specjalizujacych sie w
-                  pomocy przy bolach plecow i ramion, migrenach, a takze masazach
+                  W trosce o zdrowie moich klientów współpracuję z doktorem
+                  Mateuszem Nowackim, który prowadzi gabinet chiropraktyki Health
+                  Clinic. Health Clinic to multidyscyplinarny zespół specjalistów
+                  i entuzjastów zdrowia – fizjoterapeutów specjalizujących się w
+                  pomocy przy bólach pleców i ramion, migrenach, a także masażach
                   relaksacyjnych.
                 </p>
                 <a
@@ -215,7 +215,7 @@ export default function HealthZonePage() {
                   rel="noreferrer"
                   className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-teal-700 transition hover:text-orange-500"
                 >
-                  Odwiedz strone partnera
+                  Odwiedź stronę partnera
                   <ExternalLink className="h-4 w-4" aria-hidden="true" />
                 </a>
               </div>
@@ -226,7 +226,7 @@ export default function HealthZonePage() {
                     <div className="flex h-full w-full items-center justify-center">
                       <UserRound className="h-14 w-14 text-stone-400" aria-hidden="true" />
                       <span className="sr-only">
-                        Zdjecie dr. Mateusza Nowackiego
+                        Zdjęcie dr. Mateusza Nowackiego
                       </span>
                     </div>
                   ) : (
@@ -249,7 +249,7 @@ export default function HealthZonePage() {
         <section className="py-14 sm:py-16">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <h2 className="text-center font-serif text-3xl text-teal-700 sm:text-4xl">
-              Wskazowki dla zdrowia
+              Wskazówki dla zdrowia
             </h2>
 
             <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">

@@ -139,9 +139,9 @@ export default function AboutPage() {
                 mgr Michał Kasprzyca - psycholog, psychoterapeuta
               </p>
               <p className="mt-4 max-w-2xl leading-relaxed text-stone-600">
-                Od lat wspieram osoby dorosle w odzyskiwaniu rownowagi psychicznej,
-                lepszym rozumieniu siebie oraz budowaniu trwalych zmian w codziennym
-                zyciu.
+                Od lat wspieram osoby dorosłe w odzyskiwaniu równowagi psychicznej,
+                lepszym rozumieniu siebie oraz budowaniu trwałych zmian w codziennym
+                życiu.
               </p>
               <div className="mt-5">
                 <BookingInline compact />

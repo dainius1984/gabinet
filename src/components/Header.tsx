@@ -9,9 +9,9 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: 'Strona glowna', href: '/', kind: 'route' },
+  { label: 'Strona główna', href: '/', kind: 'route' },
   { label: 'O mnie', href: '/o-mnie', kind: 'route' },
-  { label: 'Uslugi', href: '/uslugi', kind: 'route' },
+  { label: 'Usługi', href: '/uslugi', kind: 'route' },
   { label: 'Cennik', href: '/cennik', kind: 'route' },
   { label: 'Strefa zdrowia', href: '/strefa-zdrowia', kind: 'route' },
   { label: 'Kontakt', href: '/kontakt', kind: 'route' },
@@ -79,7 +79,7 @@ export default function Header() {
             </div>
             <div className="min-w-0">
               <p className="truncate font-serif text-base text-teal-700 sm:text-lg">
-                Michal Kasprzyca
+                Michał Kasprzyca
               </p>
               <p className="hidden text-xs text-stone-500 sm:block">
                 Psycholog i psychoterapeuta
@@ -87,7 +87,7 @@ export default function Header() {
             </div>
           </Link>
 
-          <nav aria-label="Nawigacja glowna" className="hidden md:block">
+          <nav aria-label="Nawigacja główna" className="hidden md:block">
             <ul className="flex flex-wrap items-center gap-1.5">
               {navItems.map((item) => {
                 const isActive = isNavItemActive(
@@ -130,7 +130,7 @@ export default function Header() {
             className="inline-flex items-center rounded-lg border border-stone-200 p-2 text-stone-700 transition hover:bg-stone-100 md:hidden"
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-menu"
-            aria-label="Przelacz menu"
+            aria-label="Przełącz menu"
           >
             {isMobileMenuOpen ? (
               <X className="h-5 w-5" aria-hidden="true" />

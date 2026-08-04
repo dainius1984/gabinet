@@ -17,14 +17,14 @@ const serviceCards: ServiceCardData[] = [
   {
     title: 'Konsultacje',
     description:
-      'Jesli doswiadczasz problemow w relacjach z innymi, masz trudnosci wychowawcze ze swoimi dziecmi, doswiadczasz Ci powracajace obawy i leki, zamartwiasz sie czyms lub po prostu chcesz w swoim zyciu cos zmienic na lepsze i potrzebujesz wsparcia, serdecznie zapraszam Cie na konsultacje psychologiczna.',
+      'Jeśli doświadczasz problemów w relacjach z innymi, masz trudności wychowawcze ze swoimi dziećmi, doświadczają Cię powracające obawy i lęki, zamartwiasz się czymś lub po prostu chcesz w swoim życiu coś zmienić na lepsze i potrzebujesz wsparcia, serdecznie zapraszam Cię na konsultację psychologiczną.',
     href: '#konsultacje',
     icon: Feather,
   },
   {
     title: 'Terapia indywidualna',
     description:
-      'Zmianom w naszym zyciu prawie zawsze towarzyszy stres lub lek. Ogromnie pomocna w takich sytuacjach jest mozliwosc systematycznego korzystania ze wsparcia i doswiadczenia terapeuty. W bezpiecznej relacji terapeutycznej mozemy wspolnie przygladac sie sytuacjom problemowym, szukac nowych rozwiazan oraz uczyc sie je wdrazac w zycie.',
+      'Zmianom w naszym życiu prawie zawsze towarzyszy stres lub lęk. Ogromnie pomocna w takich sytuacjach jest możliwość systematycznego korzystania ze wsparcia i doświadczenia terapeuty. W bezpiecznej relacji terapeutycznej możemy wspólnie przyglądać się sytuacjom problemowym, szukać nowych rozwiązań oraz uczyć się je wdrażać w życie.',
     href: '#terapia-indywidualna',
     icon: Bird,
   },
@@ -60,18 +60,18 @@ export default function ServicesPage() {
         <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center gap-3 text-teal-700">
             <Bird className="h-5 w-5" aria-hidden="true" />
-            <h1 className="text-center font-serif text-4xl sm:text-5xl">Uslugi</h1>
+            <h1 className="text-center font-serif text-4xl sm:text-5xl">Usługi</h1>
             <Bird className="h-5 w-5" aria-hidden="true" />
           </div>
 
           <div className="mx-auto mt-10 max-w-4xl rounded-2xl border border-stone-200 bg-white px-6 py-10 text-center shadow-sm sm:px-10 sm:py-12">
             <p className="leading-relaxed text-stone-600 sm:text-lg">
-              Konsultacje i sesje terapeutyczne prowadze w trybie krotko i
-              dlugoterminowym. Po zdiagnozowaniu sytuacji problemowej wspolnie
-              wyznaczamy cel i zakres spotkan oraz staramy sie zrealizowac go w
-              ciagu nastepnych sesji. Dokladna ilosc potrzebnych spotkan jest
-              ustalana w czasie pierwszej wizyty. Tresc kazdej sesji, jak i dane
-              personalne klienta sa oczywiscie objete tajemnica. Czas spotkania
+              Konsultacje i sesje terapeutyczne prowadzę w trybie krótko i
+              długoterminowym. Po zdiagnozowaniu sytuacji problemowej wspólnie
+              wyznaczamy cel i zakres spotkań oraz staramy się zrealizować go w
+              ciągu następnych sesji. Dokładna ilość potrzebnych spotkań jest
+              ustalana w czasie pierwszej wizyty. Treść każdej sesji, jak i dane
+              personalne klienta są oczywiście objęte tajemnicą. Czas spotkania
               to 50 minut.
             </p>
             <div className="mt-6">
@@ -90,20 +90,20 @@ export default function ServicesPage() {
 
         <section id="konsultacje" className="mx-auto mt-14 max-w-7xl px-4 sm:mt-16 sm:px-6 lg:px-8">
           <article className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm sm:p-8">
-            <h2 className="font-serif text-3xl text-teal-700">Konsultacje - korzysci</h2>
+            <h2 className="font-serif text-3xl text-teal-700">Konsultacje – korzyści</h2>
             <p className="mt-4 leading-relaxed text-stone-600">
-              Konsultacja psychologiczna pomaga nazwac aktualne trudnosci i
-              uporzadkowac sytuacje zyciowa. To pierwszy krok do odzyskania
-              spokoju oraz wyznaczenia realnego planu dalszych dzialan.
+              Konsultacja psychologiczna pomaga nazwać aktualne trudności i
+              uporządkować sytuację życiową. To pierwszy krok do odzyskania
+              spokoju oraz wyznaczenia realnego planu dalszych działań.
             </p>
             <ul className="mt-5 grid gap-3 sm:grid-cols-2">
               <li className="flex items-start gap-2 text-stone-700">
                 <CheckCircle2 className="mt-0.5 h-5 w-5 text-orange-500" aria-hidden="true" />
-                Lepsze zrozumienie zrodla stresu, lekow i napiecia.
+                Lepsze zrozumienie źródła stresu, lęków i napięcia.
               </li>
               <li className="flex items-start gap-2 text-stone-700">
                 <CheckCircle2 className="mt-0.5 h-5 w-5 text-orange-500" aria-hidden="true" />
-                Konkretne wskazowki jak poradzic sobie z biezacym kryzysem.
+                Konkretne wskazówki, jak poradzić sobie z bieżącym kryzysem.
               </li>
               <li className="flex items-start gap-2 text-stone-700">
                 <CheckCircle2 className="mt-0.5 h-5 w-5 text-orange-500" aria-hidden="true" />
@@ -120,17 +120,17 @@ export default function ServicesPage() {
         <section id="terapia-indywidualna" className="mx-auto mt-8 max-w-7xl px-4 pb-2 sm:px-6 lg:px-8">
           <article className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm sm:p-8">
             <h2 className="font-serif text-3xl text-teal-700">
-              Terapia indywidualna - korzysci
+              Terapia indywidualna – korzyści
             </h2>
             <p className="mt-4 leading-relaxed text-stone-600">
-              Systematyczna terapia pozwala pracowac glebiej nad utrwalonymi
-              schematami, emocjami i relacjami. To proces, ktory wspiera trwala
-              zmiane i budowanie wiekszej sprawczosci w codziennym zyciu.
+              Systematyczna terapia pozwala pracować głębiej nad utrwalonymi
+              schematami, emocjami i relacjami. To proces, który wspiera trwałą
+              zmianę i budowanie większej sprawczości w codziennym życiu.
             </p>
             <ul className="mt-5 grid gap-3 sm:grid-cols-2">
               <li className="flex items-start gap-2 text-stone-700">
                 <CheckCircle2 className="mt-0.5 h-5 w-5 text-orange-500" aria-hidden="true" />
-                Rozwijanie zdrowszych sposobow radzenia sobie z emocjami.
+                Rozwijanie zdrowszych sposobów radzenia sobie z emocjami.
               </li>
               <li className="flex items-start gap-2 text-stone-700">
                 <CheckCircle2 className="mt-0.5 h-5 w-5 text-orange-500" aria-hidden="true" />
@@ -138,7 +138,7 @@ export default function ServicesPage() {
               </li>
               <li className="flex items-start gap-2 text-stone-700">
                 <CheckCircle2 className="mt-0.5 h-5 w-5 text-orange-500" aria-hidden="true" />
-                Zmniejszenie intensywnosci napiecia i objawow stresowych.
+                Zmniejszenie intensywności napięcia i objawów stresowych.
               </li>
               <li className="flex items-start gap-2 text-stone-700">
                 <CheckCircle2 className="mt-0.5 h-5 w-5 text-orange-500" aria-hidden="true" />

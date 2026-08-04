@@ -21,10 +21,10 @@ export default function BookingInline({
         className={`inline-flex items-center gap-2 rounded-full border border-teal-200 bg-white font-semibold text-teal-700 shadow-sm transition hover:border-orange-300 hover:text-orange-600 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700 ${
           compact ? 'px-4 py-2 text-sm' : 'px-6 py-3 text-base'
         }`}
-        aria-label="Umow wizyte przez ZnanyLekarz (otworzy sie w nowej karcie)"
+        aria-label="Umów wizytę przez ZnanyLekarz (otworzy się w nowej karcie)"
       >
         <CalendarCheck2 className="h-4 w-4" aria-hidden="true" />
-        Umow wizyte
+        Umów wizytę
       </a>
     </div>
   )

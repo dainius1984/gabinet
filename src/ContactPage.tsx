@@ -18,7 +18,7 @@ export default function ContactPage() {
               Kontakt
             </h1>
             <p className="mx-auto mt-4 max-w-3xl text-center leading-relaxed text-stone-600 sm:text-lg">
-              Zapraszam do kontaktu telefonicznego lub mailowego w celu umowienia
+              Zapraszam do kontaktu telefonicznego lub mailowego w celu umówienia
               wizyty.
             </p>
 
@@ -54,7 +54,7 @@ export default function ContactPage() {
                   rel="noreferrer"
                   className="mt-2 inline-block text-stone-700 transition hover:text-orange-500"
                 >
-                  Zygmunta Krasinskiego 1, Wroclaw
+                  Zygmunta Krasińskiego 1, Wrocław
                 </a>
               </article>
             </div>
@@ -67,11 +67,11 @@ export default function ContactPage() {
         <section className="bg-stone-50 py-14 sm:py-16">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
             <h2 className="font-serif text-2xl text-teal-700 sm:text-3xl">
-              Jak dojechac?
+              Jak dojechać?
             </h2>
             <p className="mt-4 leading-relaxed text-stone-600">
-              Gabinet miesci sie w centrum Wroclawia blisko Galerii Dominikanskiej
-              na tylach hotelu Hilton przy ulicy Krasinskiego 1. Pietro 5, pokoj
+              Gabinet mieści się w centrum Wrocławia blisko Galerii Dominikańskiej
+              na tyłach hotelu Hilton przy ulicy Krasińskiego 1. Piętro 5, pokój
               503, korytarz na prawo od windy.
             </p>
 
@@ -88,7 +88,7 @@ export default function ContactPage() {
             <div className="overflow-hidden rounded-2xl border border-stone-200 bg-gray-200 shadow-sm">
               <iframe
                 src={GOOGLE_MAPS_EMBED_URL}
-                title="Mapa Google - Zygmunta Krasinskiego 1, Wroclaw"
+                title="Mapa Google – Zygmunta Krasińskiego 1, Wrocław"
                 className="h-[400px] w-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -101,7 +101,7 @@ export default function ContactPage() {
                 rel="noreferrer"
                 className="text-sm font-medium text-teal-700 underline-offset-2 transition hover:text-orange-500 hover:underline"
               >
-                Otworz lokalizacje w Google Maps
+                Otwórz lokalizację w Google Maps
               </a>
             </div>
           </div>
@@ -111,7 +111,7 @@ export default function ContactPage() {
           <div className="mx-auto grid max-w-6xl grid-cols-1 gap-4 px-4 text-white sm:px-6 md:grid-cols-3 lg:px-8">
             <div className="flex items-center gap-2">
               <MapPin className="h-5 w-5" aria-hidden="true" />
-              <span>Zygmunta Krasinskiego 1, Wroclaw</span>
+              <span>Zygmunta Krasińskiego 1, Wrocław</span>
             </div>
             <a
               href="tel:+48507084352"

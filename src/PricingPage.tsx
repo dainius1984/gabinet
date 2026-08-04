@@ -14,12 +14,12 @@ const pricingItems: PricingItem[] = [
   {
     name: 'Konsultacja psychologiczna',
     duration: '50 minut',
-    price: '200 zl',
+    price: '200 zł',
   },
   {
     name: 'Terapia indywidualna',
     duration: '50 minut',
-    price: '200 zl',
+    price: '200 zł',
   },
 ]
 
@@ -123,8 +123,8 @@ export default function PricingPage() {
           <section className="mx-auto mt-10 max-w-4xl sm:mt-12">
             <div className="rounded-xl border border-orange-200 bg-orange-50 px-5 py-5 sm:px-7">
               <p className="leading-relaxed text-stone-700">
-                Platnosc za sesje odbywa sie gotowka lub przelewem przed
-                spotkaniem. Istnieje mozliwosc wystawienia faktury.
+                Płatność za sesję odbywa się gotówką lub przelewem przed
+                spotkaniem. Istnieje możliwość wystawienia faktury.
               </p>
             </div>
           </section>
