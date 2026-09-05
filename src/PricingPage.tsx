@@ -14,12 +14,12 @@ const pricingItems: PricingItem[] = [
   {
     name: 'Konsultacja psychologiczna',
     duration: '50 minut',
-    price: '200 zł',
+    price: '220 zł',
   },
   {
     name: 'Terapia indywidualna',
     duration: '50 minut',
-    price: '200 zł',
+    price: '220 zł',
   },
 ]
 
